@@ -1,0 +1,107 @@
+.literature {
+    margin-bottom: 32px;
+    width: 207px;
+}
+
+.resources {
+    width: 207px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    position: relative;
+    margin-bottom: 20px;
+    width: 129px;
+}
+
+.title::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 150px;
+    border: 1px solid #00122F;
+    bottom: -12px;
+}
+
+
+.linkLiteratur {
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: var(--text-primary-color);
+    cursor: pointer;
+}
+
+.linkRsourse {
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: var(--text-primary-color);
+    position: relative;
+    cursor: pointer;
+}
+
+
+.linkRsourse::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 0.3px solid var(--text-primary-color);
+    bottom: -1px;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+   
+
+    .literature {
+        width: 336px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end
+    }
+
+    .resources {
+        width: 336px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end
+    }
+
+    .title {
+        font-size: 22px;
+        line-height: 30px;
+        letter-spacing: 0.02em;
+        margin-bottom: 40px;
+        width: inherit;
+    }
+
+    .title::after {
+        content: '';
+        bottom: -20px;
+        width: 100%;
+    }
+
+    .list {
+        width: 254px;
+
+    }
+
+    .linkLiteratur {
+        font-size: 14px;
+        line-height: 22px;
+
+
+    }
+
+    .linkRsourse {
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 0.02em;
+
+    }
+
+}
