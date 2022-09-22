@@ -1,3 +1,4 @@
 import axios from 'axios';
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-axios.defaults.baseURL = 'https://lonardo17.github.io/Pro-test/';
+axios.defaults.baseURL = BASE_URL;
