@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { testTypeSelector } from 'redux/testType/testTypeSelector';
 import {
@@ -10,18 +11,17 @@ export default function TestView() {
   const testType = useSelector(testTypeSelector);
   const [testQuestions, setTestQuestions] = useState(null);
 
-  useEffect(async () => {
+  useEffect(() => {
     if (!testType) return;
 
-    try {
-      const newTest =
-        testType === techTest
-          ? await getTechTestQuestionsQuery()
-          : await getTheoryTestQuestionsQuery();
-
-      setTestQuestions(newTest);
-    } catch (error) {
-      console.log(error.message);
+    if (testType === techTest) {
+      getTechTestQuestionsQuery()
+        .then(data => setTestQuestions(data))
+        .catch(err => console.log(err.message));
+    } else {
+      getTheoryTestQuestionsQuery()
+        .then(data => setTestQuestions(data))
+        .catch(err => console.log(err.message));
     }
   }, [testType]);
 
