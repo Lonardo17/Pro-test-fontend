@@ -11,4 +11,4 @@ export const testTypeSlice = createSlice({
 });
 
 export default testTypeSlice.reducer;
-export const { setAnswer } = testTypeSlice.actions;
+export const {setTestType } = testTypeSlice.actions;
