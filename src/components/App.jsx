@@ -16,7 +16,7 @@ const TestViews = lazy(() => import('../views/TestView/TestViews'));
 const ResultViews = lazy(() => import('../views/ResultView/ResultViews'));
 export const App = () => {
   return (
-    <div>
+    <div className="page">
       <Suspense fallback={<Loader />}>
         {true && (
           <Routes>
