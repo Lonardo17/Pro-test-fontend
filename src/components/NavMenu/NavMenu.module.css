@@ -1,0 +1,42 @@
+.iconOpen {
+  width: 20px;
+  height: 20px;
+}
+
+.iconClose {
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .menu {
+    position: absolute;
+    z-index: var(--mobile-menu-z-index);
+    left: 0;
+    top: var(--header-constant-height);
+    width: 100vw;
+    height: calc(100vh - var(--header-constant-height));
+    background-color: var(--header-bcg-color);
+  }
+
+  .tab {
+    height: 76px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--header-border-color);
+  }
+}
+
+.logout {
+  width: 16px;
+  height: 16px;
+}
+
+:global(.body-no-scroll) {
+  overflow: hidden;
+}
+
+.link:visited {
+  color: initial;
+}

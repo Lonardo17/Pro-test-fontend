@@ -2,9 +2,9 @@ const routes = {
   home: '/',
   auth: '/auth',
   test: '/test',
-  results:'/results',
+  results: '/results',
   materials: '/useful-info',
-  contacts:'/contacts',
+  contacts: '/contacts',
 };
 
 export default routes;
