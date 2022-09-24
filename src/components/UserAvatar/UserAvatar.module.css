@@ -1,0 +1,66 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--btn-secondary-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--user-avatar-shadow);
+}
+
+.avatar {
+  font-family: 'Montserrat';
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--text-third-color);
+  letter-spacing: 0.02em;
+}
+
+.name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.02em;
+}
+@media screen and (max-width: 767px) {
+  .name {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .user {
+    margin-right: 8px;
+  }
+  .wrapper {
+    margin-left: 40px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .user {
+    margin-right: 20px;
+  }
+
+  .user {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+  }
+  .avatar {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+  }
+  .wrapper {
+    margin-left: 80px;
+  }
+}

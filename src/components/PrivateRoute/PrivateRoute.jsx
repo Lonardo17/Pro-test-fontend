@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { getIsLoggedIn } from 'redux/auth/authSelectors';
 
 export default function PrivateRoute({ children, redirect = '/login' }) {
-  const isLoggedIn = useSelector(getIsLoggedIn);
+  const isLoggedIn = useSelector(getIsLoggedIn); //TODO: add Redux Auth State support
 
   return isLoggedIn ? children : <Navigate to={redirect} replace />;
 }

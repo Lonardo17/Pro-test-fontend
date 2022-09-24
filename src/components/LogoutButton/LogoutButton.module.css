@@ -1,0 +1,13 @@
+.link {
+  width: 16px;
+  max-height: 16px;
+  display: inline-block;
+}
+.link:visited {
+  color: initial;
+}
+
+.logout {
+  width: 16px;
+  height: 16px;
+}
