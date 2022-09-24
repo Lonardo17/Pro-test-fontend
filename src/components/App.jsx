@@ -20,9 +20,9 @@ export const App = () => {
       <Suspense fallback={<Loader />}>
         {true && (
           <Routes>
-            <Route path={auth} element={<SharedLayout />}>
-              <Route index element={<AuthView />} />
-              <Route exact path={home} element={<HomeView />} />
+            <Route path={home} element={<SharedLayout />}>
+              <Route path={auth} element={<AuthView />} />
+              <Route index element={<HomeView />} />
               <Route path={contacts} element={<ContactsView />} />
               <Route path={materials} element={<MaterialsViews />} />
               <Route path={test} element={<TestViews />} />
