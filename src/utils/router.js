@@ -1,7 +1,10 @@
+import { techTest, theoryTest } from './constants';
+
 const routes = {
   home: '/',
   auth: '/auth',
-  test: '/test',
+  theoryTestPath: `/test/${theoryTest}`,
+  techTestPath: `/test/${techTest}`,
   results: '/results',
   materials: '/useful-info',
   contacts: '/contacts',

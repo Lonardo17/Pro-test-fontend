@@ -1,2 +1,2 @@
-export const theoryTest = 'testing theory';
-export const techTest = 'technical training';
+export const theoryTest = 'testing_theory';
+export const techTest = 'technical_training';

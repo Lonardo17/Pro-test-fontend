@@ -1,0 +1,25 @@
+.question {
+  font-weight: 700 !important;
+  font-size: 22px !important;
+  line-height: 1.36 !important;
+  text-align: center !important;
+  color: var(--text-primary-color) !important;
+}
+
+.line {
+  width: 336px;
+  height: 1px;
+  background-color: var(--line-question);
+  margin: 32px auto;
+}
+
+.option {
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+  font-weight: 500 !important;
+  color: var(--text-primary-color) !important;
+}
+
+.option:not(:last-child) {
+  margin-bottom: 14px !important;
+}
