@@ -3,6 +3,7 @@
 }
 
 .label {
+  font-family: 'Montserrat Medium';
   font-size: 8px;
   line-height: 9px;
 
@@ -12,6 +13,7 @@
 }
 
 .labelNumber {
+  font-family: 'Montserrat Medium';
   font-size: 10px;
   line-height: 12px;
   letter-spacing: 0.02em;
@@ -20,17 +22,14 @@
   color: #000000;
 }
 
+.labelNumber::before {
+  content: '';
+  height: 14px;
+  width: 14px;
+  color: #000000;
+}
+
 .square {
   height: 14px;
   width: 14px;
-}
-
-@media screen and (min-width: 768px) {
-  .labelNumber {
-    font-size: 16px;
-  }
-
-  .label {
-    font-size: 16px;
-  }
 }

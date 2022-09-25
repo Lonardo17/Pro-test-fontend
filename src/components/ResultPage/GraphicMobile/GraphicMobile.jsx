@@ -1,4 +1,4 @@
-import s from './Graphic.module.css';
+import s from './GraphicMobile.module.css';
 import { PieChart, Pie, Cell } from 'recharts';
 
 const data = [
@@ -15,16 +15,19 @@ const renderCustomizedLabel = ({
   midAngle,
   innerRadius,
   outerRadius,
+  percent,
+  payload,
+  fill,
   value,
   name,
 }) => {
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(RADIAN * midAngle);
-  const sx = cx + (outerRadius - 35) * cos;
-  const sy = cy - (innerRadius - 40) * sin;
-  const mx = cx + (outerRadius - 10) * cos;
-  const my = cy - (outerRadius - 120) * sin;
-  const ex = mx + (cos >= 0 ? 3 : -3) * 22;
+  const sx = cx + (outerRadius - 20) * cos;
+  const sy = cy + (innerRadius + 60) * sin;
+  const mx = cx + (outerRadius + 5) * cos;
+  const my = cy + (outerRadius - 90) * sin;
+  const ex = mx + (cos >= 0 ? 1 : -1) * 22;
   const ey = my;
   const textAnchor = cos >= 0 ? 'start' : 'end';
 
@@ -32,44 +35,39 @@ const renderCustomizedLabel = ({
     <>
       <path
         d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
-        stroke="#00000081"
+        stroke="#000000"
         fill="none"
       />
       <circle cx={sx} cy={sy} r={3} fill="#FFFFFF" stroke="none" />
-
       <text
-        x={ex + (cos >= 0 ? 3 : -3) * 15}
-        y={ey + (cos >= 0 ? 0.5 : 0.5) * 12}
+        x={ex + (cos >= 0 ? 1 : -1) * 12}
+        y={ey}
         textAnchor={textAnchor}
         fill="#333"
         className={s.labelNumber}
-      >
-        {`${value}% ${name}`}
-      </text>
-      {data.map((entry, index) => (
-        <rect
-          key={`cell-${index}`}
-          fill="inherit"
-          width="25"
-          height="25"
-          x={ex + (cos >= 0 ? 1 : -3) * 12}
-          y={ey + (cos >= 0 ? -1 : -1) * 12}
-        />
-      ))}
+      >{`${value}%`}</text>
+
+      <text
+        x={ex + (cos >= 0 ? 1 : -1) * 12}
+        y={ey + (cos >= 0 ? 1 : -1) * 9}
+        textAnchor={textAnchor}
+        fill="#333"
+        className={s.label}
+      >{`${name}`}</text>
     </>
   );
 };
 
 export default function App() {
   return (
-    <PieChart width={730} height={286} className={s.graphic}>
+    <PieChart width={320} height={160} className={s.graphic}>
       <Pie
         data={data}
-        cx={365}
-        cy={138}
+        cx={160}
+        cy={75}
         labelLine={false}
         label={renderCustomizedLabel}
-        outerRadius={142.5}
+        outerRadius={78}
         fill="#8884d8"
         stroke="none"
         dataKey="value"
