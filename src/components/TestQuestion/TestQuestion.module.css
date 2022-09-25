@@ -1,23 +1,31 @@
 .question {
+  font-family: inherit !important;
   font-weight: 700 !important;
-  font-size: 22px !important;
-  line-height: 1.36 !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.02em !important;
   text-align: center !important;
   color: var(--text-primary-color) !important;
 }
 
 .line {
-  width: 336px;
+  width: 130px;
   height: 1px;
   background-color: var(--line-question);
   margin: 32px auto;
 }
 
+.optionsList {
+  width: 100%;
+}
+
 .option {
-  font-size: 10px !important;
+  font-family: inherit !important;
   line-height: 1.2 !important;
   font-weight: 500 !important;
   color: var(--text-primary-color) !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 }
 
 .option:not(:last-child) {

@@ -30,6 +30,7 @@ html {
   --btn-primary-color: #ff6b09;
   --btn-secondary-color: #ffffff;
   --btn-third-color: #02172a;
+  --disabled-btn-color: #bbbaba;
   --shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
   --user-avatar-shadow: 0px 1px 1px rgba(18, 29, 46, 0.1);
   --header-bcg-color: #f5f6fb;
