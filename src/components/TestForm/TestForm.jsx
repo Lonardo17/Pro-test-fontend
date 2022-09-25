@@ -1,15 +1,20 @@
 import FormControl from '@mui/material/FormControl';
 import Icon from 'components/Icon';
 import TestQuestion from 'components/TestQuestion';
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addAnswer } from 'redux/answers/answersSlice';
 import s from './TestForm.module.css';
+import routes from '../../utils/router';
+import useLocalStorage from 'hooks/useLocalStorage';
 
 export default function TestForm({ questions }) {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // з LS
-  const [chosenAnswer, setChosenAnswer] = useState(null); // з LS
-
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useLocalStorage(
+    'currentQIndex',
+    0
+  );
+  const [chosenAnswer, setChosenAnswer] = useLocalStorage('chosenAnswer', null);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   function decrementIndex() {
@@ -35,6 +40,12 @@ export default function TestForm({ questions }) {
     setChosenAnswer(null);
   }
 
+  function handleSubmitAnswers() {
+    addNewAnswer();
+    localStorage.setItem('questions', null);
+    navigate(routes.results, { replace: true });
+  }
+
   return (
     <>
       <div className={s.questionCard}>
@@ -48,6 +59,8 @@ export default function TestForm({ questions }) {
         <FormControl className={s.form}>
           {questions && (
             <TestQuestion
+              // index={currentQuestionIndex}
+              // allQuestions={questions}
               question={questions[currentQuestionIndex]}
               chosenAnswer={chosenAnswer}
               setChosenAnswer={setChosenAnswer}
@@ -81,11 +94,10 @@ export default function TestForm({ questions }) {
 
         {currentQuestionIndex === 11 ? (
           <button
-            type="submit" // TODO
-            className={s.btnSubmit}
+            type="submit"
+            className={!chosenAnswer ? s.btnSubmitDisabled : s.btnSubmit}
             disabled={!chosenAnswer ? true : false}
-
-            // onClick={setCurrentQuestingIndex(currentQuestingIndex + 1)}
+            onClick={handleSubmitAnswers}
           >
             Send Answers
           </button>

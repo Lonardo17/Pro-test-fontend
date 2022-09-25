@@ -3,13 +3,18 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import s from './TestQuestion.module.css';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
+// import { answersSelector } from 'redux/answers/answersSelectors';
+// import { useSelector } from 'react-redux';
 
 export default function TestQuestion({
+  // allQuestions,
+  // index,
   question,
   chosenAnswer,
   setChosenAnswer,
 }) {
+  // const allGivenAnswers = useSelector(answersSelector);
   const mobileStyles = {
     width: '18px',
     height: '18px',
@@ -23,9 +28,26 @@ export default function TestQuestion({
     },
   };
 
-  useEffect(() => {
-    console.log(chosenAnswer);
-  }, [chosenAnswer]);
+  // useEffect(() => {
+  //   if (chosenAnswer) return;
+  //   if (!question) return;
+  //   if (!allGivenAnswers) return;
+
+  //   const currentQuestionId = allQuestions[index];
+
+  //   for (const answer of allGivenAnswers) {
+  //     if (answer?.id === currentQuestionId) {
+  //       setChosenAnswer(answer?.option);
+  //     }
+  //   }
+  // }, [
+  //   allGivenAnswers,
+  //   allQuestions,
+  //   chosenAnswer,
+  //   index,
+  //   question,
+  //   setChosenAnswer,
+  // ]);
 
   return (
     <>
