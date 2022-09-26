@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .tab:not(:last-child) {
+    margin-right: 60px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .tab:not(:last-child) {
+    margin-right: 80px;
+  }
+  .link {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+  }
+}
+
+.link:visited {
+  color: initial;
+}

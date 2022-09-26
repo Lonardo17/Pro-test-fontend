@@ -1,10 +1,13 @@
+import { techTest, theoryTest } from './constants';
+
 const routes = {
   home: '/',
   auth: '/auth',
-  test: '/test',
-  results:'/results',
+  theoryTestPath: `/test/${theoryTest}`,
+  techTestPath: `/test/${techTest}`,
+  results: '/results',
   materials: '/useful-info',
-  contacts:'/contacts',
+  contacts: '/contacts',
 };
 
 export default routes;
