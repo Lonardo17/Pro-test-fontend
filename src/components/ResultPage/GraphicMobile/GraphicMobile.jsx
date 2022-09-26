@@ -24,9 +24,9 @@ const renderCustomizedLabel = ({
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(RADIAN * midAngle);
   const sx = cx + (outerRadius - 20) * cos;
-  const sy = cy + (innerRadius + 60) * sin;
-  const mx = cx + (outerRadius + 5) * cos;
-  const my = cy + (outerRadius - 90) * sin;
+  const sy = cy + (innerRadius + 40) * sin;
+  const mx = cx + (outerRadius - 3) * cos;
+  const my = cy + (outerRadius - 70) * sin;
   const ex = mx + (cos >= 0 ? 1 : -1) * 22;
   const ey = my;
   const textAnchor = cos >= 0 ? 'start' : 'end';
@@ -35,25 +35,35 @@ const renderCustomizedLabel = ({
     <>
       <path
         d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
-        stroke="#000000"
+        stroke="#00000081"
         fill="none"
       />
       <circle cx={sx} cy={sy} r={3} fill="#FFFFFF" stroke="none" />
       <text
-        x={ex + (cos >= 0 ? 1 : -1) * 12}
-        y={ey}
+        x={ex + (cos >= 0 ? 2 : -2) * 11}
+        y={ey + 2}
         textAnchor={textAnchor}
         fill="#333"
         className={s.labelNumber}
       >{`${value}%`}</text>
 
       <text
-        x={ex + (cos >= 0 ? 1 : -1) * 12}
-        y={ey + (cos >= 0 ? 1 : -1) * 9}
+        x={ex + (cos >= 0 ? 1 : -1) * 6}
+        y={ey + (cos >= 0 ? 2 : -2) * 7}
         textAnchor={textAnchor}
         fill="#333"
         className={s.label}
       >{`${name}`}</text>
+      {data.map((entry, index) => (
+        <rect
+          key={`cell-${index}`}
+          fill={fill}
+          width="14"
+          height="14"
+          x={ex + (cos >= 0 ? 1 : -3) * 6}
+          y={ey + (cos >= 0 ? -1 : -1) * 8}
+        />
+      ))}
     </>
   );
 };

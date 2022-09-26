@@ -16,14 +16,15 @@ const renderCustomizedLabel = ({
   innerRadius,
   outerRadius,
   value,
+  fill,
   name,
 }) => {
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(RADIAN * midAngle);
-  const sx = cx + (outerRadius - 35) * cos;
-  const sy = cy - (innerRadius - 40) * sin;
-  const mx = cx + (outerRadius - 10) * cos;
-  const my = cy - (outerRadius - 120) * sin;
+  const sx = cx + (outerRadius - 40) * cos;
+  const sy = cy - (innerRadius - 70) * sin;
+  const mx = cx + (outerRadius - 20) * cos;
+  const my = cy - (outerRadius - 170) * sin;
   const ex = mx + (cos >= 0 ? 3 : -3) * 22;
   const ey = my;
   const textAnchor = cos >= 0 ? 'start' : 'end';
@@ -49,7 +50,7 @@ const renderCustomizedLabel = ({
       {data.map((entry, index) => (
         <rect
           key={`cell-${index}`}
-          fill="inherit"
+          fill={fill}
           width="25"
           height="25"
           x={ex + (cos >= 0 ? 1 : -3) * 12}
