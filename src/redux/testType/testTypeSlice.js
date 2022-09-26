@@ -7,8 +7,11 @@ export const testTypeSlice = createSlice({
     setTestType: (_, { payload }) => {
       return payload;
     },
+    resetTestType: (state, action) => {
+      return '';
+    },
   },
 });
 
 export default testTypeSlice.reducer;
-export const {setTestType } = testTypeSlice.actions;
+export const { setTestType, resetTestType } = testTypeSlice.actions;

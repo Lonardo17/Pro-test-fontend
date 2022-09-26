@@ -1,8 +1,8 @@
 // import storage from 'redux-persist/lib/storage';
 import { configureStore } from '@reduxjs/toolkit';
 import {
-//   persistStore,
-//   persistReducer,
+  persistStore,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -10,21 +10,24 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import {authApi} from './authAPI'
-import testTypeReducer from './testType/testTypeSlice';
-import answersReducer from './answers/answersSlice';
+import storage from 'redux-persist/lib/storage';
+import { rootReducer } from './rootReducer';
+import { setupListeners } from '@reduxjs/toolkit/query';
+
+const persistConfig = {
+  key: 'root',
+  storage,
+};
 
 export const store = configureStore({
-    reducer: {
-        [authApi.reducerPath]: authApi.reducer,
-        testType: testTypeReducer,
-        answers: answersReducer
-
-            },
-    middleware: getDefaultMiddleware =>
-        getDefaultMiddleware({
-            serializableCheck: {
-                ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-            },
-        }),
+  reducer: persistReducer(persistConfig, rootReducer),
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
+
+setupListeners(store.dispatch);
+export const persistor = persistStore(store);
