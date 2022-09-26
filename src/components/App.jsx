@@ -1,11 +1,18 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-
 import routes from '../utils/router';
 import SharedLayout from './SharedLayout';
 import Loader from './Loader';
 
-const { home, auth, test, results, materials, contacts } = routes;
+const {
+  home,
+  auth,
+  theoryTestPath,
+  techTestPath,
+  results,
+  materials,
+  contacts,
+} = routes;
 const AuthView = lazy(() => import('../views/AuthView/AuthView'));
 const HomeView = lazy(() => import('../views/HomeView/HomeView'));
 const ContactsView = lazy(() => import('../views/ContactsView/ContactsView'));
@@ -25,7 +32,8 @@ export const App = () => {
               <Route index element={<HomeView />} />
               <Route path={contacts} element={<ContactsView />} />
               <Route path={materials} element={<MaterialsViews />} />
-              <Route path={test} element={<TestViews />} />
+              <Route path={techTestPath} element={<TestViews />} />
+              <Route path={theoryTestPath} element={<TestViews />} />
               <Route path={results} element={<ResultViews />} />
             </Route>
           </Routes>
