@@ -1,0 +1,19 @@
+.AuthView {
+  padding: 40px 0px 34px 0px;
+  background-color: var(--background-auth-color);
+}
+
+@media screen and (min-width: 768px) {
+  .AuthView {
+    padding: 80px 0px 70px 0px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .AuthView {
+    padding: 98px 124px 98px 124px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

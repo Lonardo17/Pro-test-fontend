@@ -1,0 +1,67 @@
+.Login {
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+
+  color: var(--text-primary-color);
+}
+
+.text {
+  width: 280px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+
+  color: var(--text-primary-color);
+}
+
+.txtBold {
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .Login {
+    width: 535px;
+  }
+
+  .text {
+    width: 535px;
+    font-size: 16px;
+    line-height: 2.25;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .Login {
+    width: 280px;
+    margin-left: 0;
+    margin-right: 0;
+    /* margin-right: 112px; */
+  }
+
+  .title {
+    margin-bottom: 20px;
+    font-size: 34px;
+    line-height: 1.21;
+  }
+
+  .text {
+    font-size: 18px;
+    line-height: 2;
+  }
+
+  .txtBold {
+    font-weight: 700;
+  }
+}
