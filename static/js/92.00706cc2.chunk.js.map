@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/92.00706cc2.chunk.js","mappings":"mKAAe,SAASA,IACpB,OACI,+BACI,gCAGX,C","sources":["views/AuthView/AuthView.js"],"sourcesContent":["export default function AuthForm() { \n    return (\n        <>\n            <h1>hi</h1>\n        </>\n    )\n}"],"names":["AuthForm"],"sourceRoot":""}
