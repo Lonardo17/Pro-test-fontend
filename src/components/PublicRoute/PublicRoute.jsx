@@ -1,10 +1,13 @@
+import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
+import { getIsLoggedIn } from 'redux/auth/authSelectors';
 
 import routes from 'utils/router';
 
-const PublicRoute = ({ restricted = false, navTo = routes.home, children }) => {
-  const isLoggedIn = false; //TODO: add Redux Auth State support
-  return isLoggedIn && restricted ? <Navigate to={navTo} /> : children;
+const PublicRoute = ({ navTo = routes.home, children }) => {
+  const isLoggedIn = useSelector(getIsLoggedIn);
+  console.log(isLoggedIn);
+  return isLoggedIn ? <Navigate to={navTo} /> : children;
 };
 
 export default PublicRoute;
