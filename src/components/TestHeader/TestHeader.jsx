@@ -29,6 +29,7 @@ export default function TestHeader() {
     dispatch(resetAnswers());
     dispatch(resetTestType());
     localStorage.setItem('questions', null);
+    localStorage.setItem('currentQIndex', 0);
     navigate(home, { replace: true });
   }
 
