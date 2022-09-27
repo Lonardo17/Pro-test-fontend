@@ -12,7 +12,7 @@ const { home, materials, contacts } = routes;
 
 const NavMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isLoggedIn = true; //TODO: add Redux Auth State support
+  const isLoggedIn = false; //TODO: add Redux Auth State support
 
   const toggleMenu = () => {
     document.body.classList.toggle(NO_SCROLL);
