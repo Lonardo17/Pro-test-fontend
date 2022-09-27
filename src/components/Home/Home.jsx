@@ -8,6 +8,7 @@ import { theoryTest, techTest } from 'utils/constants';
 const { theoryTestPath, techTestPath } = path;
 
 export default function Home() {
+  localStorage.clear();
   const dispatch = useDispatch();
   return (
     <div className={s.container}>
