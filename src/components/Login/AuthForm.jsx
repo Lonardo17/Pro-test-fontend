@@ -22,7 +22,7 @@ export default function AuthForm() {
 
   const { email, password } = user;
   const { emailError, passwordError } = error;
-  // const { emailDirty, passwordDirty } = dirty;
+  const { emailDirty, passwordDirty } = dirty;
 
   const dispatch = useDispatch();
 
@@ -137,8 +137,6 @@ export default function AuthForm() {
           setUser({
             email: data.user.email,
             token: data.user.token,
-            // refreshToken: data.refreshToken,
-            // sid: data.sid,
           })
         );
         setUserForm({
@@ -150,6 +148,7 @@ export default function AuthForm() {
   };
 
   const onRegister = () => {
+    toast.warn('Please enter your email and password');
     if (!user?.email && !user?.password) {
       toast.warn('Please enter email and password for registration');
       return;
@@ -199,6 +198,7 @@ export default function AuthForm() {
           onBlur={onBlur}
           name="email"
         />
+        {emailDirty && emailError && toast.warn(emailError)}
       </label>
       <label className={s.label}>
         <input
@@ -212,6 +212,7 @@ export default function AuthForm() {
           onBlur={onBlur}
           name="password"
         />
+        {passwordDirty && passwordError && toast.warn(passwordError)}
       </label>
       <div className={s.buttonWraper}>
         <button

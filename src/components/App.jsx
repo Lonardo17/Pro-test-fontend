@@ -5,6 +5,8 @@ import SharedLayout from './SharedLayout';
 import Loader from './Loader';
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const {
   home,
@@ -90,6 +92,17 @@ export const App = () => {
           </Routes>
         )}
       </Suspense>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+      />
     </div>
   );
 };
