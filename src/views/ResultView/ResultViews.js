@@ -6,24 +6,37 @@ import { answersSelector } from 'redux/answers/answersSelectors';
 import { useEffect, useState } from 'react';
 import { getResult } from 'services/resultAPI';
 import { testTypeSelector } from 'redux/testType/testTypeSelector';
+import Loader from 'components/Loader';
 
 const ResultPage = () => {
   const answers = useSelector(answersSelector);
   const testType = useSelector(testTypeSelector);
   const [result, setResult] = useState(0);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
+    setIsLoading(true);
+
     getResult({
       answers: JSON.stringify(answers),
       testType: testType,
-    }).then(response => setResult(response.data.result));
+    })
+      .then(response => setResult(response.data.result))
+      .finally(() => setIsLoading(false));
     return () => {};
   }, [answers, testType]);
 
   return (
     <div className={s.container}>
-      <ResultGraphic result={result} />
-      <ResultMotivation testType={testType} />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <ResultGraphic result={result} />
+          <ResultMotivation testType={testType} />
+        </>
+      )}
     </div>
   );
 };

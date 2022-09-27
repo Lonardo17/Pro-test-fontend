@@ -21,7 +21,7 @@ const ContactsView = lazy(() => import('../views/ContactsView/ContactsView'));
 const MaterialsViews = lazy(() =>
   import('../views/MaterialsView/MaterialsViews')
 );
-const TestView = lazy(() => import('../views/TestView/TestView'));
+const TestViews = lazy(() => import('../views/TestView/TestView'));
 const ResultViews = lazy(() => import('../views/ResultView/ResultViews'));
 export const App = () => {
   return (

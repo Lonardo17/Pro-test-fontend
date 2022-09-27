@@ -1,17 +1,10 @@
 import s from './Graphic.module.css';
 import { PieChart, Pie, Cell } from 'recharts';
-
-const correctAnswer = localStorage.getItem('answer1');
-const incorrectAnswer = localStorage.getItem('answer2');
+// import useLocalStorage from 'hooks/useLocalStorage';
 
 const COLORS = ['#FF6B01', '#D7D7D7'];
 
 const RADIAN = Math.PI / 180;
-
-const data = [
-  { name: 'Correct', value: Number(correctAnswer) },
-  { name: 'Incorrect', value: Number(incorrectAnswer) },
-];
 
 const renderCustomizedLabel = ({
   cx,
@@ -32,7 +25,6 @@ const renderCustomizedLabel = ({
   const ex = mx + (cos >= 0 ? 3 : -3) * 22;
   const ey = my;
   const textAnchor = cos >= 0 ? 'start' : 'end';
-
   return (
     <>
       <path
@@ -51,21 +43,25 @@ const renderCustomizedLabel = ({
       >
         {`${value}% ${name}`}
       </text>
-      {data.map((entry, index) => (
-        <rect
-          key={`cell-${index}`}
-          fill={fill}
-          width="25"
-          height="25"
-          x={ex + (cos >= 0 ? 1 : -3) * 12}
-          y={ey + (cos >= 0 ? -1 : -1) * 12}
-        />
-      ))}
+
+      <rect
+        fill={fill}
+        width="25"
+        height="25"
+        // x={ex + (cos >= 0 ? 1 : -3) * 12}
+        // y={ey + (cos >= 0 ? -1 : -1) * 12}
+        x={695 - outerRadius}
+        y={100}
+      />
     </>
   );
 };
 
-export default function Graphic() {
+export default function Graphic({ percentCorrect, percentIncorrect }) {
+  const data = [
+    { name: 'Correct', value: Number(percentCorrect) },
+    { name: 'Incorrect', value: Number(percentIncorrect) },
+  ];
   return (
     <PieChart width={730} height={286} className={s.graphic}>
       <Pie

@@ -26,8 +26,8 @@ export default function ResultGraphic({ result }) {
 
   const percentCorrect = Math.floor((result * 100) / 12);
   const percentIncorrect = Math.floor(100 - percentCorrect);
-  localStorage.setItem('answer1', percentCorrect);
-  localStorage.setItem('answer2', percentIncorrect);
+  // localStorage.setItem('answer1', percentCorrect);
+  // localStorage.setItem('answer2', percentIncorrect);
 
   return (
     <div>
