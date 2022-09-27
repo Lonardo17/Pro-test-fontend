@@ -6,7 +6,7 @@ import routes from 'utils/router';
 
 const ProTestLogo = () => {
   return (
-    <Link to={routes.auth}>
+    <Link to={routes.home}>
       <div className={s.wrapper}>
         <svg className={s.logo}>
           <use href={`${sprite}#icon-logo`}></use>
