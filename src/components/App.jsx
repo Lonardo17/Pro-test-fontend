@@ -19,7 +19,7 @@ const ContactsView = lazy(() => import('../views/ContactsView/ContactsView'));
 const MaterialsViews = lazy(() =>
   import('../views/MaterialsView/MaterialsViews')
 );
-const TestViews = lazy(() => import('../views/TestView/TestViews'));
+const TestView = lazy(() => import('../views/TestView/TestView'));
 const ResultViews = lazy(() => import('../views/ResultView/ResultViews'));
 export const App = () => {
   return (
@@ -32,8 +32,8 @@ export const App = () => {
               <Route index element={<HomeView />} />
               <Route path={contacts} element={<ContactsView />} />
               <Route path={materials} element={<MaterialsViews />} />
-              <Route path={techTestPath} element={<TestViews />} />
-              <Route path={theoryTestPath} element={<TestViews />} />
+              <Route path={techTestPath} element={<TestView />} />
+              <Route path={theoryTestPath} element={<TestView />} />
               <Route path={results} element={<ResultViews />} />
             </Route>
           </Routes>
