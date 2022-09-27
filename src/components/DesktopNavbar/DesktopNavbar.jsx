@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import s from './DesktopNavbar.module.css';
-import routes from 'utils/router';
+import routes, { checkActive } from 'utils/router';
 
 const { home, materials, contacts } = routes;
 
@@ -11,7 +11,7 @@ const DesktopNavbar = () => {
       <ul className={s.nav}>
         {isLoggedIn && (
           <li className={s.tab}>
-            <NavLink className={s.link} to={home}>
+            <NavLink className={s.link} to={home} isActive={checkActive}>
               Home
             </NavLink>
           </li>

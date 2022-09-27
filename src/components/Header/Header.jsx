@@ -4,9 +4,11 @@ import UserAvatar from 'components/UserAvatar';
 import NavMenu from 'components/NavMenu';
 import LogoutButton from 'components/LogoutButton';
 import Navbar from 'components/DesktopNavbar';
+import { getIsLoggedIn } from 'redux/auth/authSelectors';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
-  const isLoggedIn = false; //TODO: add Redux Auth State support
+  const isLoggedIn = useSelector(getIsLoggedIn);
 
   return (
     <header className={s.header}>
