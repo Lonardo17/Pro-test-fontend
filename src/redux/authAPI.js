@@ -1,62 +1,70 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const BASE_URL = 'https://lonardo17.github.io/Pro-test/';
+const BASE_URL = 'https://app-protest.herokuapp.com/';
 
 export const authApi = createApi({
   reducerPath: 'authApi',
   baseQuery: fetchBaseQuery({
     baseUrl: BASE_URL,
-    prepareHeaders: headers => {
-      const res = localStorage.getItem('user');
-      if (!res) {
-        return headers;
+    prepareHeaders: (headers, { getState, endpoint }) => {
+      let token = getState().currentUser.token;
+      if (endpoint === 'refreshUser') {
+        token = getState().currentUser.refreshToken;
       }
-      const token = JSON.parse(res).token;
       if (token) {
         headers.set('authorization', `Bearer ${token}`);
-        return headers;
       }
       return headers;
     },
+    // prepareHeaders: headers => {
+    //   const res = localStorage.getItem('user');
+    //   if (!res) {
+    //     return headers;
+    //   }
+    //   const token = JSON.parse(res).token;
+    //   if (token) {
+    //     headers.set('authorization', `Bearer ${token}`);
+    //     return headers;
+    //   }
+    //   return headers;
+    // },
   }),
   tagTypes: ['Contacts', 'Users'],
   endpoints: builder => ({
-    
     addUser: builder.mutation({
       query: user => ({
-        url: '/users/signup',
+        url: '/users/registration',
         method: 'POST',
         body: user,
       }),
       invalidatesTags: ['Users'],
-      transformResponse: result => {
-        localStorage.setItem('user', JSON.stringify(result));
-      },
+      // transformResponse: result => {
+      //   // localStorage.setItem('user', JSON.stringify(result));
+      // },
     }),
     authorizeUser: builder.mutation({
       query(user) {
         return {
-          url: `users/login`,
+          url: `users/authorization`,
           method: 'POST',
           body: user,
         };
       },
       invalidatesTags: ['Users'],
-      transformResponse: result => {
-        localStorage.setItem('user', JSON.stringify(result));
-      },
+      // transformResponse: result => {
+      //   // localStorage.setItem('user', JSON.stringify(result));
+      // },
     }),
     logOutUser: builder.mutation({
       query() {
         return {
           url: `users/logout`,
-          method: 'POST',
         };
       },
       invalidatesTags: ['Users'],
-      transformResponse: () => {
-        localStorage.setItem('user', '');
-      },
+      // transformResponse: () => {
+      //   // localStorage.setItem('user', '');
+      // },
     }),
     getUser: builder.query({
       query() {

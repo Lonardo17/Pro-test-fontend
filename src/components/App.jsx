@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import routes from '../utils/router';
 import SharedLayout from './SharedLayout';
 import Loader from './Loader';
+import PublicRoute from './PublicRoute';
+import PrivateRoute from './PrivateRoute';
 
 const {
   home,
@@ -28,13 +30,62 @@ export const App = () => {
         {true && (
           <Routes>
             <Route path={home} element={<SharedLayout />}>
-              <Route path={auth} element={<AuthView />} />
-              <Route index element={<HomeView />} />
-              <Route path={contacts} element={<ContactsView />} />
-              <Route path={materials} element={<MaterialsViews />} />
-              <Route path={techTestPath} element={<TestViews />} />
-              <Route path={theoryTestPath} element={<TestViews />} />
-              <Route path={results} element={<ResultViews />} />
+              <Route
+                path={auth}
+                element={
+                  <PublicRoute>
+                    <AuthView />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                index
+                element={
+                  <PrivateRoute>
+                    <HomeView />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path={techTestPath}
+                element={
+                  <PrivateRoute>
+                    <TestViews />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path={theoryTestPath}
+                element={
+                  <PrivateRoute>
+                    <TestViews />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path={results}
+                element={
+                  <PrivateRoute>
+                    <ResultViews />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path={materials}
+                element={
+                  <PrivateRoute>
+                    <MaterialsViews />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path={contacts}
+                element={
+                  <PrivateRoute>
+                    <ContactsView />
+                  </PrivateRoute>
+                }
+              />
             </Route>
           </Routes>
         )}
