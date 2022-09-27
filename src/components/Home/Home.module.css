@@ -5,6 +5,7 @@
     color: #000000;
     margin: 0px auto;
     padding-top: 32px;
+    padding-bottom: 30px;
 }
 .cite{
     font-weight: 700;
@@ -58,7 +59,6 @@
 @media screen and (min-width: 768px) {
     .container{
         width: 650px;
-        padding: 80px 59px 0;
     }
     .cite{
         font-style: normal;
@@ -86,7 +86,6 @@
 }
 @media screen and (min-width: 1280px) {
     .container{
-        padding: 120px 224px 0;
         width: 832px;
     }
     .cite{
