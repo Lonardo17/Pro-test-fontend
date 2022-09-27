@@ -1,12 +1,20 @@
 import s from './ResultMotivation.module.css';
 import { Link } from 'react-router-dom';
-import path from 'utils/router';
+import { useDispatch } from 'react-redux';
+import { resetAnswers } from 'redux/answers/answersSlice';
 import cat from './cat.png';
 import cat2x from './cat2x.png';
 
-const { test } = path;
+const ResultMotivation = ({ testType }) => {
+  const dispatch = useDispatch();
+  function handleFinishTest() {
+    dispatch(resetAnswers());
+    localStorage.setItem('questions', null);
+    localStorage.setItem('currentQIndex', 0);
+    localStorage.removeItem('answer1');
+    localStorage.removeItem('answer2');
+  }
 
-const ResultMotivation = () => {
   return (
     <div className={s.container}>
       <img
@@ -19,8 +27,12 @@ const ResultMotivation = () => {
       <p className={s.motivationText}>
         But you still need to learn some materials.
       </p>
-      {/* test/testType */}
-      <Link to={test} className={s.button}>
+
+      <Link
+        to={`/test/${testType}`}
+        className={s.button}
+        onClick={handleFinishTest}
+      >
         Try again
       </Link>
     </div>

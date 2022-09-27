@@ -1,9 +1,12 @@
 import s from './GraphicMobile.module.css';
 import { PieChart, Pie, Cell } from 'recharts';
 
+const correctAnswer = localStorage.getItem('answer1');
+const incorrectAnswer = localStorage.getItem('answer2');
+
 const data = [
-  { name: 'Correct', value: 90 },
-  { name: 'Incorrect', value: 10 },
+  { name: 'Correct', value: Number(correctAnswer) },
+  { name: 'Incorrect', value: Number(incorrectAnswer) },
 ];
 
 const COLORS = ['#FF6B01', '#D7D7D7'];
@@ -68,7 +71,7 @@ const renderCustomizedLabel = ({
   );
 };
 
-export default function App() {
+export default function GraphicMobile() {
   return (
     <PieChart width={320} height={160} className={s.graphic}>
       <Pie

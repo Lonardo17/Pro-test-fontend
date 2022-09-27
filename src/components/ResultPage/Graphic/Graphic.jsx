@@ -1,14 +1,18 @@
 import s from './Graphic.module.css';
 import { PieChart, Pie, Cell } from 'recharts';
 
-const data = [
-  { name: 'Correct', value: 90 },
-  { name: 'Incorrect', value: 10 },
-];
+const correctAnswer = localStorage.getItem('answer1');
+const incorrectAnswer = localStorage.getItem('answer2');
 
 const COLORS = ['#FF6B01', '#D7D7D7'];
 
 const RADIAN = Math.PI / 180;
+
+const data = [
+  { name: 'Correct', value: Number(correctAnswer) },
+  { name: 'Incorrect', value: Number(incorrectAnswer) },
+];
+
 const renderCustomizedLabel = ({
   cx,
   cy,
@@ -61,7 +65,7 @@ const renderCustomizedLabel = ({
   );
 };
 
-export default function App() {
+export default function Graphic() {
   return (
     <PieChart width={730} height={286} className={s.graphic}>
       <Pie
