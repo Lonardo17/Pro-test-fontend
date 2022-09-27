@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import LogoutButton from 'components/LogoutButton';
 import s from './NavMenu.module.css';
 import sprite from 'img/symbol-defs.svg';
-import routes from 'utils/router';
+import routes, { checkActive } from 'utils/router';
 
 const NO_SCROLL = 'body-no-scroll';
 
@@ -38,7 +38,12 @@ const NavMenu = () => {
           <ul className={s.list}>
             {isLoggedIn && (
               <li className={s.tab}>
-                <NavLink className={s.link} onClick={toggleMenu} to={home}>
+                <NavLink
+                  className={s.link}
+                  isActive={checkActive}
+                  onClick={toggleMenu}
+                  to={home}
+                >
                   Home
                 </NavLink>
               </li>
