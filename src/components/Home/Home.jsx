@@ -8,11 +8,12 @@ import { theoryTest, techTest } from 'utils/constants';
 const { theoryTestPath, techTestPath } = path;
 
 export default function Home() {
+  localStorage.clear();
   const dispatch = useDispatch();
   return (
     <div className={s.container}>
       <q className={s.cite}>
-        Regression testing. What is it? If the system compiles, that's good, if
+        Regression testing. What is it?<br /> If the system compiles, that's good, if
         it boots, that's great!{' '}
       </q>
       <div className={s.line}></div>

@@ -1,12 +1,13 @@
 import FormControl from '@mui/material/FormControl';
 import Icon from 'components/Icon';
 import TestQuestion from 'components/TestQuestion';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addAnswer } from 'redux/answers/answersSlice';
 import s from './TestForm.module.css';
 import routes from '../../utils/router';
 import useLocalStorage from 'hooks/useLocalStorage';
+import { answersSelector } from 'redux/answers/answersSelectors';
 
 export default function TestForm({ questions }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useLocalStorage(
@@ -16,12 +17,14 @@ export default function TestForm({ questions }) {
   const [chosenAnswer, setChosenAnswer] = useLocalStorage('chosenAnswer', null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const allGivenAnswers = useSelector(answersSelector);
 
   function decrementIndex() {
     if (currentQuestionIndex === 0) {
       return;
     }
     const newIndex = currentQuestionIndex - 1;
+    findAnswerAtStore(newIndex);
     setCurrentQuestionIndex(newIndex);
     addNewAnswer();
   }
@@ -31,12 +34,27 @@ export default function TestForm({ questions }) {
       return;
     }
     const newIndex = currentQuestionIndex + 1;
+    findAnswerAtStore(newIndex);
     setCurrentQuestionIndex(newIndex);
     addNewAnswer();
   }
 
   function addNewAnswer() {
-    dispatch(addAnswer(chosenAnswer));
+    if (chosenAnswer) {
+      dispatch(addAnswer(chosenAnswer));
+    }
+  }
+
+  function findAnswerAtStore(index) {
+    const id = questions[index].questionId;
+
+    for (const answer of allGivenAnswers) {
+      if (answer?.id === id) {
+        console.log(id, answer?.option);
+        setChosenAnswer({ id: id, option: answer?.option });
+        return;
+      }
+    }
     setChosenAnswer(null);
   }
 
@@ -59,8 +77,6 @@ export default function TestForm({ questions }) {
         <FormControl className={s.form}>
           {questions && (
             <TestQuestion
-              // index={currentQuestionIndex}
-              // allQuestions={questions}
               question={questions[currentQuestionIndex]}
               chosenAnswer={chosenAnswer}
               setChosenAnswer={setChosenAnswer}
