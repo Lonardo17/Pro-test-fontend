@@ -1,86 +1,76 @@
 import s from './Graphic.module.css';
-// import React, { useCallback, useState } from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
-
-const data = [
-  { name: 'Correct', value: 90 },
-  { name: 'Incorrect', value: 10 },
-];
+// import useLocalStorage from 'hooks/useLocalStorage';
 
 const COLORS = ['#FF6B01', '#D7D7D7'];
 
 const RADIAN = Math.PI / 180;
+
 const renderCustomizedLabel = ({
   cx,
   cy,
   midAngle,
   innerRadius,
   outerRadius,
-  percent,
-  payload,
-  fill,
   value,
+  fill,
   name,
 }) => {
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(RADIAN * midAngle);
-  const sx = cx + (outerRadius - 20) * cos;
-  const sy = cy + (innerRadius + 60) * sin;
-  const mx = cx + (outerRadius + 5) * cos;
-  const my = cy + (outerRadius - 90) * sin;
-  const ex = mx + (cos >= 0 ? 1 : -1) * 22;
+  const sx = cx + (outerRadius - 40) * cos;
+  const sy = cy - (innerRadius - 70) * sin;
+  const mx = cx + (outerRadius - 20) * cos;
+  const my = cy - (outerRadius - 170) * sin;
+  const ex = mx + (cos >= 0 ? 3 : -3) * 22;
   const ey = my;
   const textAnchor = cos >= 0 ? 'start' : 'end';
-
   return (
     <>
       <path
         d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
-        stroke="#000000"
+        stroke="#00000081"
         fill="none"
       />
       <circle cx={sx} cy={sy} r={3} fill="#FFFFFF" stroke="none" />
-      {/* <div fill="#000000" className={s.square}></div> */}
+
       <text
-        x={ex + (cos >= 0 ? 1 : -1) * 12}
-        y={ey}
+        x={ex + (cos >= 0 ? 3 : -3) * 15}
+        y={ey + (cos >= 0 ? 0.5 : 0.5) * 12}
         textAnchor={textAnchor}
         fill="#333"
         className={s.labelNumber}
-      >{`${value}%`}</text>
+      >
+        {`${value}% ${name}`}
+      </text>
 
-      <text
-        x={ex + (cos >= 0 ? 1 : -1) * 12}
-        y={ey + (cos >= 0 ? 1 : -1) * 9}
-        textAnchor={textAnchor}
-        fill="#333"
-        className={s.label}
-      >{`${name}`}</text>
+      <rect
+        fill={fill}
+        width="25"
+        height="25"
+        // x={ex + (cos >= 0 ? 1 : -3) * 12}
+        // y={ey + (cos >= 0 ? -1 : -1) * 12}
+        x={695 - outerRadius}
+        y={100}
+      />
     </>
   );
 };
 
-export default function App() {
-  // const widthBar = () => {
-  //   switch (screen) {
-  //     case 'tablet':
-  //       return 38;
-
-  //     case 'mobile':
-  //       return 15;
-  //     default:
-  //       break;
-  //   }
-  // };
+export default function Graphic({ percentCorrect, percentIncorrect }) {
+  const data = [
+    { name: 'Correct', value: Number(percentCorrect) },
+    { name: 'Incorrect', value: Number(percentIncorrect) },
+  ];
   return (
-    <PieChart width={400} height={160} className={s.graphic}>
+    <PieChart width={730} height={286} className={s.graphic}>
       <Pie
         data={data}
-        cx={200}
-        cy={75}
+        cx={365}
+        cy={138}
         labelLine={false}
         label={renderCustomizedLabel}
-        outerRadius={78}
+        outerRadius={142.5}
         fill="#8884d8"
         stroke="none"
         dataKey="value"
