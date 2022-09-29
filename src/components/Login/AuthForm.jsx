@@ -22,7 +22,7 @@ export default function AuthForm() {
 
   const { email, password } = user;
   const { emailError, passwordError } = error;
-  // const { emailDirty, passwordDirty } = dirty;
+  const { emailDirty, passwordDirty } = dirty;
 
   const dispatch = useDispatch();
 
@@ -137,8 +137,6 @@ export default function AuthForm() {
           setUser({
             email: data.user.email,
             token: data.user.token,
-            // refreshToken: data.refreshToken,
-            // sid: data.sid,
           })
         );
         setUserForm({
@@ -150,6 +148,7 @@ export default function AuthForm() {
   };
 
   const onRegister = () => {
+    toast.warn('Please enter your email and password');
     if (!user?.email && !user?.password) {
       toast.warn('Please enter email and password for registration');
       return;
@@ -179,8 +178,8 @@ export default function AuthForm() {
     <form className={s.Form}>
       <p className={s.firstText}>You can use Google Account to authorize:</p>
       <button className={s.btnGoogle}>
-        <svg className={s.btnIcon} width="18px" height="18px">
-          <use href="../../img/google.svg"></use>
+        <svg className={s.btnIcon} width="18" height="18">
+          <use href="../../img/symbol-defs.svg#icon-google"></use>
         </svg>
         Google
       </button>
@@ -199,11 +198,13 @@ export default function AuthForm() {
           onBlur={onBlur}
           name="email"
         />
+        {emailDirty && emailError && <p className={s.message}>{emailError}</p>}
+        {/* {emailDirty && emailError && toast.warn(emailError)} */}
       </label>
       <label className={s.label}>
         <input
           className={s.inputPassword}
-          type="text"
+          type="password"
           placeholder="Password"
           required
           id="password"
@@ -212,12 +213,16 @@ export default function AuthForm() {
           onBlur={onBlur}
           name="password"
         />
+        {passwordDirty && passwordError && (
+          <p className={s.message}>{passwordError}</p>
+        )}
+        {/* {passwordDirty && passwordError && toast.warn(passwordError)} */}
       </label>
       <div className={s.buttonWraper}>
         <button
           className={s.buttonSignIn}
           type="button"
-          onClick={onRegister}
+          onClick={onLogin}
           disabled={!formValidity}
         >
           Sign in
@@ -225,7 +230,7 @@ export default function AuthForm() {
         <button
           className={s.buttonSignUp}
           type="button"
-          onClick={onLogin}
+          onClick={onRegister}
           disabled={!formValidity}
         >
           Sign up
