@@ -50,7 +50,7 @@ export const App = () => {
                 path={techTestPath}
                 element={
                   <PrivateRoute>
-                    <TestViews />
+                    <TestView />
                   </PrivateRoute>
                 }
               />
@@ -58,7 +58,7 @@ export const App = () => {
                 path={theoryTestPath}
                 element={
                   <PrivateRoute>
-                    <TestViews />
+                    <TestView />
                   </PrivateRoute>
                 }
               />

@@ -3,7 +3,6 @@
 .wrap {
     padding: 40px 0 117px 20px;
     margin: 0 auto;
-    min-height: 100vh;
     background-image: url("../../img/picMob1x.png");
     background-repeat: no-repeat;
     background-position: right top -3px;
