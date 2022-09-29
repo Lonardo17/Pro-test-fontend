@@ -11,9 +11,16 @@
 
 @media screen and (min-width: 1280px) {
   .AuthView {
-    padding: 98px 124px 98px 124px;
+    max-width: 1033px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .container {
+    width: 100wh;
+    background-color: var(--background-auth-color);
   }
 }

@@ -5,13 +5,15 @@
   padding: 40px 20px;
   background-color: var(--background-secondary-color);
   text-align: center;
+  box-shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
 }
 
 .firstText {
   margin-bottom: 32px;
   font-weight: 500;
   font-size: 10px;
-  line-height: 1.2px;
+  line-height: 1.2;
+  text-align: start;
 
   color: var(--text-primary-color);
 }
@@ -19,7 +21,7 @@
 .btnGoogle {
   width: 159px;
   margin-bottom: 32px;
-  padding: 16px 37px;
+  padding: 14px 37px;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
@@ -45,39 +47,46 @@
   margin-bottom: 20px;
   font-weight: 500;
   font-size: 10px;
-  line-height: 1.2px;
+  line-height: 1.2;
   letter-spacing: 0.02em;
+  text-align: start;
 
   color: var(--text-primary-color);
 }
 
-.label {
-  /* width: 100%; */
-}
-
 .inputMail {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   padding: 20px;
   width: 240px;
   border: 1px solid var(--input-border-color);
 }
 
 .inputPassword {
-  margin-bottom: 20px;
+  margin-top: 20px;
+  /* margin-bottom: 20px; */
   padding: 20px;
   width: 240px;
   border: 1px solid var(--input-border-color);
 }
 
+.message {
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.04em;
+  color: red;
+  margin-top: 5px;
+}
+
 .buttonWraper {
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
 
 .buttonSignIn {
   width: 110px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 28px;
+  padding-bottom: 28px;
   font-weight: 700;
   font-size: 10px;
   line-height: 1.2px;
@@ -101,8 +110,8 @@
 
 .buttonSignUp {
   width: 110px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 28px;
+  padding-bottom: 28px;
   font-weight: 700;
   font-size: 10px;
   line-height: 1.2px;
@@ -127,7 +136,7 @@
 @media screen and (min-width: 768px) {
   .Form {
     width: 501px;
-    margin: 0;
+    margin: 0 auto 0 auto;
     padding: 60px 32px 48px 32px;
     text-align: start;
   }
@@ -140,25 +149,39 @@
   .secondText {
     font-size: 14px;
     line-height: 1.14;
+    margin-bottom: 32px;
   }
 
   .inputMail {
     width: 425px;
+    /* margin-bottom: 24px; */
   }
 
   .inputPassword {
     width: 425px;
+    /* margin-bottom: 40px; */
+    margin-top: 24px;
   }
 
   .buttonSignIn {
     width: 210px;
     font-size: 12px;
     line-height: 1.25;
+    padding-top: 22px;
+    padding-bottom: 22px;
   }
 
   .buttonSignUp {
     width: 210px;
     font-size: 12px;
     line-height: 1.25;
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .Form {
+    margin: 0;
   }
 }
