@@ -61,6 +61,8 @@ export default function TestForm({ questions }) {
   function handleSubmitAnswers() {
     addNewAnswer();
     localStorage.setItem('questions', null);
+    localStorage.setItem('chosenAnswer', null);
+    localStorage.setItem('currentQIndex', 0);
     navigate(routes.results, { replace: true });
   }
 
