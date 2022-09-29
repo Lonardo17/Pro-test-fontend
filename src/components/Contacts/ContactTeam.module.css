@@ -58,6 +58,9 @@
      position: absolute;
     left: 190px;
     bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
  }
  .linkedin{
     margin-right: 10px;
@@ -77,7 +80,7 @@
 
  @media screen and (min-width:768px) {
 .wrap {
-        width: 768px;
+        width: 740px;
         padding-left: 32px;
         padding-right: 32px;
     }
@@ -102,19 +105,19 @@
          padding-right: 28px;
      }
      .link{
-    left: 275px;
+left: 235px;
      }
 
  }
 
  @media screen and (min-width:1280px) {
 .wrap {
-        width: 832px;
+        width: 890px;
     }
      .item {
          width: calc(100% / 3 - 30px);
      }
      .link{
-        left: 175px;
+    left: 170px;
      }
  }
