@@ -1,14 +1,6 @@
 import s from './GraphicMobile.module.css';
 import { PieChart, Pie, Cell } from 'recharts';
 
-const correctAnswer = localStorage.getItem('answer1');
-const incorrectAnswer = localStorage.getItem('answer2');
-
-const data = [
-  { name: 'Correct', value: Number(correctAnswer) },
-  { name: 'Incorrect', value: Number(incorrectAnswer) },
-];
-
 const COLORS = ['#FF6B01', '#D7D7D7'];
 
 const RADIAN = Math.PI / 180;
@@ -18,8 +10,6 @@ const renderCustomizedLabel = ({
   midAngle,
   innerRadius,
   outerRadius,
-  percent,
-  payload,
   fill,
   value,
   name,
@@ -57,21 +47,24 @@ const renderCustomizedLabel = ({
         fill="#333"
         className={s.label}
       >{`${name}`}</text>
-      {data.map((entry, index) => (
-        <rect
-          key={`cell-${index}`}
-          fill={fill}
-          width="14"
-          height="14"
-          x={ex + (cos >= 0 ? 1 : -3) * 6}
-          y={ey + (cos >= 0 ? -1 : -1) * 8}
-        />
-      ))}
+      <rect
+        fill={fill}
+        width="25"
+        height="25"
+        // x={ex + (cos >= 0 ? 1 : -3) * 12}
+        // y={ey + (cos >= 0 ? -1 : -1) * 12}
+        x={695 - outerRadius}
+        y={100}
+      />
     </>
   );
 };
 
-export default function GraphicMobile() {
+export default function GraphicMobile({ percentCorrect, percentIncorrect }) {
+  const data = [
+    { name: 'Correct', value: Number(percentCorrect) },
+    { name: 'Incorrect', value: Number(percentIncorrect) },
+  ];
   return (
     <PieChart width={320} height={160} className={s.graphic}>
       <Pie

@@ -34,7 +34,7 @@ const ResultPage = () => {
       ) : (
         <>
           <ResultGraphic result={result} />
-          <ResultMotivation testType={testType} />
+          <ResultMotivation testType={testType} result={result} />
         </>
       )}
     </div>
