@@ -1,6 +1,5 @@
 import s from './Graphic.module.css';
 import { PieChart, Pie, Cell } from 'recharts';
-// import useLocalStorage from 'hooks/useLocalStorage';
 
 const COLORS = ['#FF6B01', '#D7D7D7'];
 
