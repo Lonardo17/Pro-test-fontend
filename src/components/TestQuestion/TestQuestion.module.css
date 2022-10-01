@@ -20,12 +20,7 @@
 }
 
 .option {
-  /* font-family: inherit !important; */
-  /* line-height: 1.2 !important; */
-  /* font-weight: 500 !important; */
   color: var(--text-primary-color) !important;
-  /* margin-right: 0 !important; */
-  /* margin-left: 0 !important; */
 }
 
 .option:not(:last-child) {

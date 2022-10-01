@@ -1,6 +1,6 @@
 const RadioButton = ({ checked }) => {
   return !checked ? (
-    <svg width="18px" height="18px" viewBox="0 0 40 40" fontSize="38px">
+    <svg width="18" height="18" viewBox="0 0 40 40" fontSize="38px">
       <circle
         cx="50%"
         cy="50%"
@@ -11,7 +11,7 @@ const RadioButton = ({ checked }) => {
       />
     </svg>
   ) : (
-    <svg width="18px" height="18x" viewBox="0 0 40 40" fontSize="38px">
+    <svg width="18" height="18" viewBox="0 0 40 40" fontSize="38px">
       <circle
         cx="50%"
         cy="50%"

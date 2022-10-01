@@ -61,6 +61,11 @@
   composes: btnPrevDisabled;
 }
 
+.btnNextDesc,
+.btnPrevDesc {
+  display: none;
+}
+
 .btnSubmit {
   composes: btnPrevEnabled;
   width: 150px;
@@ -89,5 +94,33 @@
 
     font-size: 14px;
     line-height: 1.21;
+  }
+
+  .btn {
+    width: max-content;
+    height: 34px;
+    padding: 12px 20px;
+  }
+
+  .btnDesc {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+  }
+
+  .btnPrevDesc {
+    composes: btnDesc;
+    display: block;
+    margin-left: 12px;
+    color: var(--text-secondary-color);
+  }
+
+  .btnNextDesc {
+    composes: btnDesc;
+    display: block;
+    margin-right: 12px;
+    color: var(--text-primary-color);
   }
 }

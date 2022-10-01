@@ -96,6 +96,7 @@ export default function TestForm({ questions }) {
           disabled={currentQuestionIndex === 0 ? true : false}
         >
           <Icon iconId={'icon-arrow-left'} width={24} height={24} />
+          <span className={s.btnPrevDesc}>Previous question</span>
         </button>
 
         {currentQuestionIndex < 11 ? (
@@ -105,6 +106,7 @@ export default function TestForm({ questions }) {
             onClick={incrementIndex}
             disabled={!chosenAnswer ? true : false}
           >
+            <span className={s.btnNextDesc}>Next question</span>
             <Icon iconId={'icon-arrow'} width={24} height={24} />
           </button>
         ) : null}

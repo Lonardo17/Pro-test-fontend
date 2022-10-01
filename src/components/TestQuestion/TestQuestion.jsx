@@ -12,19 +12,6 @@ export default function TestQuestion({
   chosenAnswer,
   setChosenAnswer,
 }) {
-  // const mobileStyles = {
-  //   width: '18px',
-  //   height: '18px',
-  //   color: '#000',
-  //   fontWeight: '500',
-  //   '&.Mui-checked': {
-  //     color: '#ff6b09',
-  //   },
-  //   '&.MuiButtonBase-root': {
-  //     marginRight: '20px',
-  //   },
-  // };
-
   return (
     <>
       <FormLabel id={question.questionId} className={s.question}>
