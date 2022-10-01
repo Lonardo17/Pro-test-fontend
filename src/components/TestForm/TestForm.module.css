@@ -3,8 +3,8 @@
 }
 
 .questionCard {
-  margin: 16px 0 22px;
-  padding: 42px 20px 76px;
+  margin: 18px 0 20px;
+  padding: 40px 20px 76px;
   box-shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
 }
 
@@ -75,4 +75,19 @@
 .btnSubmitDisabled {
   composes: btnPrevDisabled;
   width: 150px;
+}
+
+@media screen and (min-width: 768px) {
+  .questionCard {
+    margin: 30px 0 20px;
+    padding: 40px 73px 60px;
+  }
+
+  .questionNumber {
+    margin-bottom: 8px;
+    text-transform: none;
+
+    font-size: 14px;
+    line-height: 1.21;
+  }
 }

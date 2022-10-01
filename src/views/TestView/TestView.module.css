@@ -3,3 +3,9 @@
 
   background-color: var(--btn-secondary-color);
 }
+
+@media screen and (min-width: 768px) {
+  .testSection {
+    padding: 40px 0;
+  }
+}

@@ -50,7 +50,6 @@ export default function TestForm({ questions }) {
 
     for (const answer of allGivenAnswers) {
       if (answer?.id === id) {
-        console.log(id, answer?.option);
         setChosenAnswer({ id: id, option: answer?.option });
         return;
       }
