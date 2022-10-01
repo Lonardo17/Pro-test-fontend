@@ -20,14 +20,22 @@
 }
 
 .option {
-  font-family: inherit !important;
-  line-height: 1.2 !important;
-  font-weight: 500 !important;
   color: var(--text-primary-color) !important;
-  margin-right: 0 !important;
-  margin-left: 0 !important;
 }
 
 .option:not(:last-child) {
   margin-bottom: 14px !important;
+}
+
+@media screen and (min-width: 768px) {
+  .question {
+    font-size: 22px !important;
+    line-height: 1.36 !important;
+  }
+
+  .line {
+    width: 336px;
+    height: 1px;
+    margin: 28px auto 40px;
+  }
 }

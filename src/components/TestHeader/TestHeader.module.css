@@ -21,10 +21,29 @@
   align-items: center;
   justify-content: center;
 
+  font-family: inherit;
+  font-weight: 500;
   font-size: 10px;
   line-height: 1.2;
   background-color: var(--btn-primary-color);
   color: var(--text-secondary-color);
   border: none;
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .testTitle {
+    width: 122px;
+
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.23;
+    letter-spacing: 0.02em;
+  }
+
+  .finishTestBtn {
+    width: 181px;
+    font-size: 14px;
+    line-height: 1.21;
+  }
 }

@@ -3,8 +3,9 @@
 }
 
 .questionCard {
-  margin: 24px 0 20px;
-  padding: 40px 20px 60px;
+  max-width: 480px;
+  margin: 18px auto 20px auto;
+  padding: 40px 20px 76px;
   box-shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
 }
 
@@ -61,6 +62,11 @@
   composes: btnPrevDisabled;
 }
 
+.btnNextDesc,
+.btnPrevDesc {
+  display: none;
+}
+
 .btnSubmit {
   composes: btnPrevEnabled;
   width: 150px;
@@ -75,4 +81,47 @@
 .btnSubmitDisabled {
   composes: btnPrevDisabled;
   width: 150px;
+}
+
+@media screen and (min-width: 768px) {
+  .questionCard {
+    margin: 30px auto 20px auto;
+    padding: 40px 73px 60px;
+  }
+
+  .questionNumber {
+    margin-bottom: 8px;
+    text-transform: none;
+
+    font-size: 14px;
+    line-height: 1.21;
+  }
+
+  .btn {
+    width: max-content;
+    height: 34px;
+    padding: 12px 20px;
+  }
+
+  .btnDesc {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+  }
+
+  .btnPrevDesc {
+    composes: btnDesc;
+    display: block;
+    margin-left: 12px;
+    color: var(--text-secondary-color);
+  }
+
+  .btnNextDesc {
+    composes: btnDesc;
+    display: block;
+    margin-right: 12px;
+    color: var(--text-primary-color);
+  }
 }
