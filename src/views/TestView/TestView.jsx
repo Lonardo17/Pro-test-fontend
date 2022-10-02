@@ -1,4 +1,3 @@
-import Container from 'components/Container';
 import TestHeader from 'components/TestHeader';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
@@ -34,10 +33,10 @@ export default function TestView() {
 
   return (
     <section className={s.testSection}>
-      <Container>
+      <div className={s.container}>
         <TestHeader testType={testType} />
         <TestForm questions={testQuestions} />
-      </Container>
+      </div>
     </section>
   );
 }
