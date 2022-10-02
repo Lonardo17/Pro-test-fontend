@@ -7,14 +7,16 @@ const ContactTeam = () => {
       <ul className={s.list}>
         {ContactSelector.map(({ id, image, name, role, linkedin, gitHub }) => (
           <li key={id} className={s.item}>
-            <div>
+            <div className={s.wrapImg}>
               <img src={image} alt={name} className={s.img} />
+              <div className={s.hoverImg}>
+                <ApplicationSvg linkedin={linkedin} gitHub={gitHub} />
+              </div>
             </div>
             <div className={s.info}>
               <h2 className={s.title}>{name}</h2>
               <p className={s.role}> {role}</p>
             </div>
-            <ApplicationSvg linkedin={linkedin} gitHub={gitHub} />
           </li>
         ))}
       </ul>
