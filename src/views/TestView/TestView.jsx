@@ -1,5 +1,5 @@
 import TestHeader from 'components/TestHeader';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { testTypeSelector } from 'redux/testType/testTypeSelector';
 
@@ -11,9 +11,10 @@ import s from './TestView.module.css';
 import { techTest } from 'utils/constants';
 import TestForm from 'components/TestForm';
 import useLocalStorage from 'hooks/useLocalStorage';
-
+import Loader from 'components/Loader';
 export default function TestView() {
   const testType = useSelector(testTypeSelector);
+  const [status, setStatus] = useState(false);
   const [testQuestions, setTestQuestions] = useLocalStorage('questions', null);
 
   useEffect(() => {
@@ -21,18 +22,33 @@ export default function TestView() {
     if (testQuestions) return;
 
     if (testType === techTest) {
+      setStatus(true);
       getTechTestQuestionsQuery()
-        .then(data => setTestQuestions(data.data.testData))
-        .catch(err => console.log(err));
+        .then(data => {
+          setTestQuestions(data.data.testData);
+          setStatus(false);
+        })
+        .catch(err => {
+          console.log(err);
+          setStatus(false);
+        });
     } else {
+      setStatus(true);
       getTheoryTestQuestionsQuery()
-        .then(data => setTestQuestions(data.data.testData))
-        .catch(err => console.log(err));
+        .then(data => {
+          setTestQuestions(data.data.testData);
+          setStatus(false);
+        })
+        .catch(err => {
+          console.log(err);
+          setStatus(false);
+        });
     }
   }, [setTestQuestions, testQuestions, testType]);
 
   return (
     <section className={s.testSection}>
+      {status && <Loader />}
       <div className={s.container}>
         <TestHeader testType={testType} />
         <TestForm questions={testQuestions} />
