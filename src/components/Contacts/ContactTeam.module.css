@@ -13,7 +13,6 @@
   align-items: center;
 }
 
-
 .item {
   margin-bottom: 30px;
   background-color: var(--text-secondary-color);
@@ -29,40 +28,36 @@
 .item:hover,
 .item:focus {
   transform: scale(1.03);
- }
- .wrapImg{
-    width: 280px;
-    height: 280px;
-    position: relative;
-  
- }
+}
+.wrapImg {
+  width: 280px;
+  height: 280px;
+  position: relative;
+}
 
-
- .img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-   
- }
- .hoverImg{
-    width: 100%;
-     height: 100%;
-     background-color: rgba(4,4,4,.5);
-     display: flex;
-     justify-content: center;
-     align-items: center;
-    opacity: 0;
-     position: absolute;
-     top: 0;
-     transition: opacity .3s 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
- }
- .hoverImg:hover{
-opacity: 1;
- }
- .svg {
-     fill: var(--input-border-color);
- }
-
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hoverImg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(4, 4, 4, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.3s 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hoverImg:hover {
+  opacity: 1;
+}
+.svg {
+  fill: var(--input-border-color);
+}
 
 .img {
   width: 280px;
@@ -80,22 +75,20 @@ opacity: 1;
   margin-bottom: 10px;
 }
 
-
 .role {
   font-size: 12px;
   line-height: 12px;
   color: var(--text-third-color);
 }
 
- .link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
- .linkedin{
-    margin-right: 15px;
- }
-
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.linkedin {
+  margin-right: 15px;
+}
 
 .link {
   position: absolute;
@@ -120,7 +113,6 @@ opacity: 1;
   box-shadow: var(--shadow);
 }
 
-
 @media screen and (min-width: 768px) {
   .wrap {
     width: 740px;
@@ -134,10 +126,9 @@ opacity: 1;
     margin-left: -30px;
   }
 
-         .wrapImg {
-         width: 100%;
-
-
+  .wrapImg {
+    width: 100%;
+  }
   .item {
     width: calc(100% / 2 - 30px);
     margin-left: 30px;

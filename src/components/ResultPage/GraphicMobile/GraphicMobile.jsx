@@ -14,48 +14,32 @@ const renderCustomizedLabel = ({
   value,
   name,
 }) => {
-  const sin = Math.sin(-RADIAN * midAngle);
-  const cos = Math.cos(RADIAN * midAngle);
-  const sx = cx + (outerRadius - 20) * cos;
-  const sy = cy + (innerRadius + 40) * sin;
-  const mx = cx + (outerRadius - 3) * cos;
-  const my = cy + (outerRadius - 70) * sin;
-  const ex = mx + (cos >= 0 ? 1 : -1) * 22;
-  const ey = my;
-  const textAnchor = cos >= 0 ? 'start' : 'end';
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
   return (
     <>
-      <path
-        d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
-        stroke="#00000081"
-        fill="none"
-      />
-      <circle cx={sx} cy={sy} r={3} fill="#FFFFFF" stroke="none" />
       <text
-        x={ex + (cos >= 0 ? 2 : -2) * 11}
-        y={ey + 2}
-        textAnchor={textAnchor}
-        fill="#333"
-        className={s.labelNumber}
-      >{`${value}%`}</text>
-
-      <text
-        x={ex + (cos >= 0 ? 1 : -1) * 6}
-        y={ey + (cos >= 0 ? 2 : -2) * 7}
-        textAnchor={textAnchor}
-        fill="#333"
+        x={x}
+        y={y}
+        fill="white"
+        textAnchor={x > cx ? 'start' : 'end'}
+        dominantBaseline="central"
         className={s.label}
-      >{`${name}`}</text>
-      <rect
-        fill={fill}
-        width="25"
-        height="25"
-        // x={ex + (cos >= 0 ? 1 : -3) * 12}
-        // y={ey + (cos >= 0 ? -1 : -1) * 12}
-        x={695 - outerRadius}
-        y={100}
-      />
+      >
+        {`${value}%`}
+      </text>
+      <text
+        x={x}
+        y={y + 8}
+        fill="white"
+        textAnchor={x > cx ? 'start' : 'end'}
+        dominantBaseline="central"
+        className={s.label}
+      >
+        {`${name}`}
+      </text>
     </>
   );
 };
@@ -65,6 +49,7 @@ export default function GraphicMobile({ percentCorrect, percentIncorrect }) {
     { name: 'Correct', value: Number(percentCorrect) },
     { name: 'Incorrect', value: Number(percentIncorrect) },
   ];
+
   return (
     <PieChart width={320} height={160} className={s.graphic}>
       <Pie
