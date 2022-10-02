@@ -21,13 +21,13 @@ const NavMenu = () => {
 
   return (
     <>
-      <div onClick={toggleMenu}>
+      <button onClick={toggleMenu} className={s.menuBtn}>
         {isMenuOpen ? (
-          <Icon name="close" className={s.iconClose} width={20} height={20} />
+          <Icon name="close" className={s.iconClose} height={20} />
         ) : (
-          <Icon name="menu" className={s.iconOpen} width={20} height={20} />
+          <Icon name="menu" className={s.iconOpen} height={20} />
         )}
-      </div>
+      </button>
 
       {isMenuOpen && (
         <div className={s.menu}>

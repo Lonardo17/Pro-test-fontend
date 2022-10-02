@@ -11,7 +11,7 @@
 .line {
   width: 130px;
   height: 1px;
-  background-color: var(--line-question);
+  background-color: var(--line-home);
   margin: 32px auto;
 }
 

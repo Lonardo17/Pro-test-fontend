@@ -24,8 +24,9 @@ html[theme-type='light'] {
   --text-footer-color: rgba(255, 255, 255, 0.4);
   --dark-btn-text-color: #fff;
   --accent-btn-text-color: #ffffff;
-  --line-home: #00122f;
+  --line-home: #e2e3e5;
   --line-question: rgba(0, 18, 47, 0.15);
+  --social-icons-color: #555555;
 
   --background-primary-color: #f5f6fb;
   --background-secondary-color: #ffffff;
@@ -43,8 +44,6 @@ html[theme-type='light'] {
 
   --header-border-color: #e2e3e5;
   --mobile-menu-z-index: 16;
-  --header-constant-height: 68px;
-  --footer-constant-height: 56px;
 }
 
 html[theme-type='dark'] {
@@ -57,6 +56,7 @@ html[theme-type='dark'] {
   --dark-btn-text-color: #ced2d1;
   --line-home: #121d2e;
   --line-question: #02172a;
+  --social-icons-color: #121d2e;
 
   --background-primary-color: #383737;
   --background-secondary-color: #02172a;
@@ -73,10 +73,8 @@ html[theme-type='dark'] {
   --logo-stroke-color: #ffffff;
   --logo-fill-color: #ffffff;
 
-  --header-border-color: #02172a;
+  --header-border-color: #121d2e;
   --mobile-menu-z-index: 16;
-  --header-constant-height: 68px;
-  --footer-constant-height: 56px;
 }
 
 body {
@@ -117,6 +115,7 @@ ul {
 }
 
 a {
+  display: block;
   text-decoration: none;
 }
 

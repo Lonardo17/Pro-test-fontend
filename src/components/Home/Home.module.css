@@ -17,8 +17,7 @@
 .line {
   margin: 32px auto 0;
   width: 130px;
-  opacity: 0.15;
-  border: 1px solid var(--line-home);
+  border-bottom: 1px solid var(--line-home);
 }
 .author {
   font-size: 12px;
