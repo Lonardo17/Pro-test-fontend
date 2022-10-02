@@ -1,4 +1,4 @@
-import IconsSVG from '../img/symbol-defs-min.svg';
+import IconsSVG from '../img/sprite.svg';
 
 export default function Icon({ name, width, height, className }) {
   return (

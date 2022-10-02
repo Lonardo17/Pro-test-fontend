@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import s from './Footer.module.css';
-import sprite from 'img/symbol-defs.svg';
+import sprite from 'img/sprite.svg';
 import routes from 'utils/router';
 
 const Footer = () => {
