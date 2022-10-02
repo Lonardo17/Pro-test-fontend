@@ -43,25 +43,25 @@ export const App = () => {
               <Route
                 index
                 element={
-                  // <PrivateRoute>
-                  <HomeView />
-                  // </PrivateRoute>
+                  <PrivateRoute>
+                    <HomeView />
+                  </PrivateRoute>
                 }
               />
               <Route
                 path={techTestPath}
                 element={
-                  // <PrivateRoute>
-                  <TestView />
-                  // </PrivateRoute>
+                  <PrivateRoute>
+                    <TestView />
+                  </PrivateRoute>
                 }
               />
               <Route
                 path={theoryTestPath}
                 element={
-                  // <PrivateRoute>
-                  <TestView />
-                  // </PrivateRoute>
+                  <PrivateRoute>
+                    <TestView />
+                  </PrivateRoute>
                 }
               />
               <Route
