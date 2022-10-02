@@ -4,8 +4,25 @@
   background-color: var(--background-primary-color);
 }
 
+.container {
+  margin: 0 auto;
+  padding: 0px 20px;
+  width: 100%;
+  background-color: var(--background-secondary-color);
+}
+
 @media screen and (min-width: 768px) {
   .testSection {
     padding: 40px 0;
+  }
+
+  .container {
+    width: 768px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 860px;
   }
 }
