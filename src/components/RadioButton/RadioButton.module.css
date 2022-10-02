@@ -1,0 +1,9 @@
+.radio {
+  color: var(--text-primary-color);
+  stroke: currentColor;
+}
+
+.radioChecked {
+  color: var(--text-primary-color);
+  stroke: currentColor;
+}

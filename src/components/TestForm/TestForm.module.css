@@ -113,6 +113,7 @@
   }
 
   .btn {
+    min-width: 210px;
     width: max-content;
     height: 34px;
     padding: 12px 20px;
