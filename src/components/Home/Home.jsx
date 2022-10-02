@@ -1,6 +1,6 @@
 import s from './Home.module.css';
 import { Link } from 'react-router-dom';
-import Icons from '../../utils/Icon';
+import Icon from '../../utils/Icon';
 import path from 'utils/router';
 import { useDispatch } from 'react-redux';
 import { setTestType } from 'redux/testType/testTypeSlice';
@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <div className={s.container}>
       <q className={s.cite}>
-        Regression testing. What is it?<br /> If the system compiles, that's good, if
-        it boots, that's great!{' '}
+        Regression testing. What is it?
+        <br /> If the system compiles, that's good, if it boots, that's great!{' '}
       </q>
       <div className={s.line}></div>
       <p className={s.author}>Linus Torvalds</p>
@@ -29,12 +29,11 @@ export default function Home() {
         >
           QA technical
           <br /> training
-          <Icons
+          <Icon
             name="arrow"
             width="24"
             height="24"
-            stroke="#ffffff"
-            fill="#ffffff"
+            className={s.arrowIconTechBtn}
           />
         </Link>
 
@@ -48,12 +47,11 @@ export default function Home() {
           Testing
           <br /> theory
           <br />
-          <Icons
+          <Icon
             name="arrow"
             width="24"
             height="24"
-            stroke="#ffffff"
-            fill="#ffffff"
+            className={s.arrowIconTheoryBtn}
           />
         </Link>
       </div>

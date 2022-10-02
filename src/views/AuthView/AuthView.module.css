@@ -1,6 +1,6 @@
 .AuthView {
   padding: 40px 0px 34px 0px;
-  background-color: var(--background-auth-color);
+  background-color: var(--background-primary-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -21,6 +21,6 @@
 
   .container {
     width: 100wh;
-    background-color: var(--background-auth-color);
+    background-color: var(--background-primary-color);
   }
 }

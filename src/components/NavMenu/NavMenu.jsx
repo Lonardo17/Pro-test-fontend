@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 import LogoutButton from 'components/LogoutButton';
 import s from './NavMenu.module.css';
-import sprite from 'img/symbol-defs.svg';
 import routes, { checkActive } from 'utils/router';
+import Icon from 'utils/Icon';
 
 const NO_SCROLL = 'body-no-scroll';
 
@@ -23,13 +23,9 @@ const NavMenu = () => {
     <>
       <div onClick={toggleMenu}>
         {isMenuOpen ? (
-          <svg className={s.iconClose}>
-            <use href={`${sprite}#icon-close`}></use>
-          </svg>
+          <Icon name="close" className={s.iconClose} width={20} height={20} />
         ) : (
-          <svg className={s.iconOpen}>
-            <use href={`${sprite}#icon-menu`}></use>
-          </svg>
+          <Icon name="menu" className={s.iconOpen} width={20} height={20} />
         )}
       </div>
 

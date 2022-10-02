@@ -4,7 +4,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import s from './TestQuestion.module.css';
 import { ThemeProvider } from '@mui/material';
-import { formControlTheme } from 'utils/customThemes';
+import { formControlTheme } from 'utils/customFormThemes';
 import RadioButton from 'components/RadioButton';
 
 export default function TestQuestion({

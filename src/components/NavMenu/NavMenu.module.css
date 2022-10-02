@@ -1,11 +1,15 @@
 .iconOpen {
-  width: 20px;
-  height: 20px;
+  color: var(--text-primary-color);
+  fill: currentColor;
 }
 
 .iconClose {
-  width: 20px;
-  height: 20px;
+  color: var(--text-primary-color);
+  fill: currentColor;
+}
+
+.link {
+  color: var(--text-primary-color);
 }
 
 @media screen and (max-width: 767px) {
@@ -37,6 +41,6 @@
   overflow: hidden;
 }
 
-.link:visited {
+/* .link:visited {
   color: initial;
-}
+} */

@@ -17,16 +17,18 @@
   box-sizing: border-box;
 }
 
-html {
+html[theme-type='light'] {
   --text-primary-color: #000000;
   --text-secondary-color: #ffffff;
   --text-third-color: #555555;
   --text-footer-color: rgba(255, 255, 255, 0.4);
+  --dark-btn-text-color: #fff;
+  --accent-btn-text-color: #ffffff;
   --line-home: #00122f;
   --line-question: rgba(0, 18, 47, 0.15);
-  --background-primary-color: #F5F6FB;
+
+  --background-primary-color: #f5f6fb;
   --background-secondary-color: #ffffff;
-  --background-auth-color: #f5f6fb;
   --background-footer-color: #02172a;
   --btn-primary-color: #ff6b09;
   --btn-secondary-color: #ffffff;
@@ -36,8 +38,42 @@ html {
   --disabled-btn-color: #bbbaba;
   --shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
   --user-avatar-shadow: 0px 1px 1px rgba(18, 29, 46, 0.1);
-  --header-bcg-color: #f5f6fb;
+  --logo-stroke-color: #121d2e;
+  --logo-fill-color: #ffffff;
+
   --header-border-color: #e2e3e5;
+  --mobile-menu-z-index: 16;
+  --header-constant-height: 68px;
+  --footer-constant-height: 56px;
+}
+
+html[theme-type='dark'] {
+  --text-primary-color: #ffffff;
+  --text-secondary-color: #ced2d1;
+  --text-third-color: #bbbaba;
+  --text-footer-color: rgba(255, 255, 255, 0.4);
+  --accent-btn-text-color: #02172a;
+  --light-btn-text-color: #000;
+  --dark-btn-text-color: #ced2d1;
+  --line-home: #121d2e;
+  --line-question: #02172a;
+
+  --background-primary-color: #383737;
+  --background-secondary-color: #02172a;
+  --background-footer-color: #02172a;
+  --btn-primary-color: #ff6b09;
+
+  --btn-secondary-color: #ffffff;
+  --btn-third-color: #02172a;
+  --btn-google-color: #fafafa;
+  --input-border-color: #ced2d1;
+  --disabled-btn-color: #bbbaba;
+  --shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
+  --user-avatar-shadow: 0px 1px 1px rgba(18, 29, 46, 0.1);
+  --logo-stroke-color: #ffffff;
+  --logo-fill-color: #ffffff;
+
+  --header-border-color: #02172a;
   --mobile-menu-z-index: 16;
   --header-constant-height: 68px;
   --footer-constant-height: 56px;
@@ -79,6 +115,7 @@ li {
 ul {
   list-style: none;
 }
+
 a {
   text-decoration: none;
 }
