@@ -7,7 +7,6 @@ import {
 } from '../../redux/authAPI';
 import { toast } from 'react-toastify';
 import { setUser } from '../../redux/auth/authReducer';
-import { useGoogleLogin } from '@react-oauth/google';
 
 export default function AuthForm() {
   const [user, setUserForm] = useState({ email: '', password: '' });
@@ -176,27 +175,28 @@ export default function AuthForm() {
     toast.success('User successfully registered');
   };
 
-  const login = useGoogleLogin({
-    onSuccess: async ({ code }) => {
-      console.log(code);
-      // googleLogin({ code })
-      //   .unwrap()
-      //   .then(data => {
-      //     dispatch(setUser(data));
-      //   })
-      //   .catch(data => {
-      //     toast.error(data.message, {
-      //       position: toast.POSITION.TOP_RIGHT,
-      //     });
-      //   });
-    },
-    flow: 'auth-code',
-  });
+  // const login = useGoogleLogin({
+  //   onSuccess: async ({ code }) => {
+  //     console.log(code);
+  //     // googleLogin({ code })
+  //     //   .unwrap()
+  //     //   .then(data => {
+  //     //     dispatch(setUser(data));
+  //     //   })
+  //     //   .catch(data => {
+  //     //     toast.error(data.message, {
+  //     //       position: toast.POSITION.TOP_RIGHT,
+  //     //     });
+  //     //   });
+  //   },
+  //   flow: 'auth-code',
+  // });
 
   return (
     <form className={s.Form}>
+      <a href="http://localhost:3001/users/google">google login</a>
       <p className={s.firstText}>You can use Google Account to authorize:</p>
-      <button className={s.btnGoogle} onClick={login}>
+      <button className={s.btnGoogle}>
         <svg className={s.btnIcon} width="18" height="18">
           <use href="../../img/symbol-defs.svg#icon-google"></use>
         </svg>
