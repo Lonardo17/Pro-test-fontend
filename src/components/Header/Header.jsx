@@ -6,6 +6,7 @@ import LogoutButton from 'components/LogoutButton';
 import Navbar from 'components/DesktopNavbar';
 import { getIsLoggedIn } from 'redux/auth/authSelectors';
 import { useSelector } from 'react-redux';
+import ThemeSwitch from 'components/ThemeSwitch';
 
 const Header = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -15,6 +16,8 @@ const Header = () => {
       <div className={s.logo}>
         <ProTestLogo />
       </div>
+
+      <ThemeSwitch className={s.themeSwitch} />
 
       <div className={s.wrapper}>
         <div className={s.desktopNavbar}>

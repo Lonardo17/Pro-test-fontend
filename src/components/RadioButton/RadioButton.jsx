@@ -1,17 +1,24 @@
+import s from './RadioButton.module.css';
+
 const RadioButton = ({ checked }) => {
   return !checked ? (
-    <svg width="18" height="18" viewBox="0 0 40 40" fontSize="38px">
-      <circle
-        cx="50%"
-        cy="50%"
-        r="18px"
-        stroke="#000"
-        strokeWidth="1px"
-        fill="none"
-      />
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 40 40"
+      fontSize="38px"
+      className={s.radio}
+    >
+      <circle cx="50%" cy="50%" r="18px" strokeWidth="1px" fill="none" />
     </svg>
   ) : (
-    <svg width="18" height="18" viewBox="0 0 40 40" fontSize="38px">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 40 40"
+      fontSize="38px"
+      className={s.radioChecked}
+    >
       <circle
         cx="50%"
         cy="50%"
@@ -20,14 +27,7 @@ const RadioButton = ({ checked }) => {
         strokeWidth="1px"
         fill="#ff6b09"
       />
-      <circle
-        cx="50%"
-        cy="50%"
-        r="18px"
-        stroke="#000"
-        strokeWidth="1px"
-        fill="none"
-      />
+      <circle cx="50%" cy="50%" r="18px" strokeWidth="1px" fill="none" />
     </svg>
   );
 };

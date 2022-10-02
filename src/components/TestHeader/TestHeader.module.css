@@ -11,6 +11,7 @@
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  color: var(--text-primary-color);
 }
 
 .finishTestBtn {
@@ -26,7 +27,7 @@
   font-size: 10px;
   line-height: 1.2;
   background-color: var(--btn-primary-color);
-  color: var(--text-secondary-color);
+  color: var(--accent-btn-text-color);
   border: none;
   cursor: pointer;
 }

@@ -3,6 +3,10 @@
   align-items: center;
 }
 
+.link {
+  color: var(--text-primary-color);
+}
+
 @media screen and (min-width: 768px) {
   .tab:not(:last-child) {
     margin-right: 60px;
@@ -13,13 +17,10 @@
   .tab:not(:last-child) {
     margin-right: 80px;
   }
+
   .link {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
   }
-}
-
-.link:visited {
-  color: initial;
 }

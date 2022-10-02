@@ -1,104 +1,135 @@
-.container{
-    width: 320px;
-    text-align: center;
-    letter-spacing: 0.02em;
-    color: #000000;
-    margin: 0px auto;
-    padding-top: 32px;
-    padding-bottom: 30px;
+.container {
+  width: 320px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--text-primary-color);
+  margin: 0px auto;
+  padding-top: 32px;
+  padding-bottom: 30px;
 }
-.cite{
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 1.67;
+
+.cite {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.67;
+  color: var(--text-primary-color);
 }
-.line{
-    margin: 32px auto 0 ;
-    width: 130px;
-    opacity: 0.15;
-    border: 1px solid #00122F;
+.line {
+  margin: 32px auto 0;
+  width: 130px;
+  opacity: 0.15;
+  border: 1px solid var(--line-home);
 }
-.author{
-    font-size: 12px;
-    line-height: 1.17;
-    margin-top: 12px;
+.author {
+  font-size: 12px;
+  line-height: 1.17;
+  margin-top: 12px;
 }
 .description {
-    font-size: 10px;
-    line-height: 1.2;
-    color: var(--text-third-color);
-    margin-top: 8px;
-    margin-bottom: 20px;
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--text-third-color);
+  margin-top: 8px;
+  margin-bottom: 20px;
 }
-.button{
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   align-items: center;
+.button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
-.link{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 280px;
-    height: 212px;
-    margin-top: 20px;
-    background-color: var(--btn-third-color);
-    filter: drop-shadow(0px 4px 15px rgba(18, 29, 46, 0.15));
-    color: var(--text-secondary-color);
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 212px;
+  margin-top: 20px;
+  background-color: var(--btn-third-color);
+  filter: drop-shadow(0px 4px 15px rgba(18, 29, 46, 0.15));
+  color: var(--text-secondary-color);
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
 }
-.link:last-child{
-    background-color: var(--btn-primary-color);
+.link:last-child {
+  background-color: var(--btn-primary-color);
+  color: var(--accent-btn-text-color);
+}
+
+.arrowIconTechBtn {
+  margin-top: 28px;
+  color: var(--dark-btn-text-color);
+  fill: currentColor;
+}
+
+.arrowIconTheoryBtn {
+  margin-top: 28px;
+  color: var(--accent-btn-text-color);
+  fill: currentColor;
 }
 
 @media screen and (min-width: 768px) {
-    .container{
-        width: 650px;
-    }
-    .cite{
-        font-style: normal;
-        font-weight: 700;
-        font-size: 22px;
-        line-height: 1.36;
-    }
-    .author{
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 1.22;
-    }
-    .description{
-        font-size: 14px;
-        line-height: 1.21;
-        margin-bottom: 30px;
-    }
-    .link{
-        width: 400px;
-        height: 212px;
-        font-size: 32px;
-        line-height: 1.22;
-        margin-top: 30px;
-    }
+  .container {
+    width: 650px;
+  }
+  .cite {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.36;
+  }
+  .author {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+  }
+  .description {
+    font-size: 14px;
+    line-height: 1.21;
+    margin-bottom: 30px;
+  }
+  .link {
+    width: 400px;
+    height: 212px;
+    font-size: 32px;
+    line-height: 1.22;
+    margin-top: 30px;
+  }
+
+  .arrowIconTechBtn {
+    margin-top: 12px;
+  }
+
+  .arrowIconTheoryBtn {
+    margin-top: 12px;
+  }
 }
 @media screen and (min-width: 1280px) {
-    .container{
-        width: 832px;
-    }
-    .cite{
-        width: 650px;
-    }
-    .description{
-        font-weight: 400;
-        margin-bottom: 80px;
-    }
-    .link{
-        margin-top: 0;
-    }
-    .link:last-child{
-        margin-left: 32px;
-    }
+  .container {
+    width: 832px;
+  }
+  .cite {
+    width: 650px;
+  }
+  .description {
+    font-weight: 400;
+    margin-bottom: 80px;
+  }
+  .link {
+    margin-top: 0;
+  }
+  .link:last-child {
+    margin-left: 32px;
+  }
+
+  .arrowIconTechBtn {
+    margin-bottom: 8px;
+  }
+
+  .arrowIconTheoryBtn {
+    margin-bottom: 8px;
+  }
 }

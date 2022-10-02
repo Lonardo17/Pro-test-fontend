@@ -1,13 +1,13 @@
 .testSection {
   padding: 26px 0 20px;
-  background-color: var(--btn-secondary-color);
+  background-color: var(--background-primary-color);
 }
 
 .container {
   margin: 0 auto;
   padding: 0px 20px;
   width: 100%;
-  background-color: var(--background-secondary-color);
+  background-color: var(--background-primary-color);
 }
 
 @media screen and (min-width: 768px) {

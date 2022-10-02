@@ -1,5 +1,5 @@
 import FormControl from '@mui/material/FormControl';
-import Icon from 'components/Icon';
+
 import TestQuestion from 'components/TestQuestion';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +8,7 @@ import s from './TestForm.module.css';
 import routes from '../../utils/router';
 import useLocalStorage from 'hooks/useLocalStorage';
 import { answersSelector } from 'redux/answers/answersSelectors';
+import Icon from 'utils/Icon';
 
 export default function TestForm({ questions }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useLocalStorage(
@@ -95,7 +96,12 @@ export default function TestForm({ questions }) {
           onClick={decrementIndex}
           disabled={currentQuestionIndex === 0 ? true : false}
         >
-          <Icon iconId={'icon-arrow-left'} width={24} height={24} />
+          <Icon
+            width={24}
+            height={24}
+            name="arrow-left"
+            className={s.btnPrevIcon}
+          />
           <span className={s.btnPrevDesc}>Previous question</span>
         </button>
 
@@ -107,7 +113,13 @@ export default function TestForm({ questions }) {
             disabled={!chosenAnswer ? true : false}
           >
             <span className={s.btnNextDesc}>Next question</span>
-            <Icon iconId={'icon-arrow'} width={24} height={24} />
+
+            <Icon
+              width={24}
+              height={24}
+              name="arrow"
+              className={s.btnNextIcon}
+            />
           </button>
         ) : null}
 
