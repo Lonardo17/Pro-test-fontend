@@ -1,9 +1,20 @@
+.menuBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+}
+
 .iconOpen {
+  display: block;
+  width: 14px;
   color: var(--text-primary-color);
   fill: currentColor;
 }
 
 .iconClose {
+  display: block;
+  width: 14px;
   color: var(--text-primary-color);
   fill: currentColor;
 }

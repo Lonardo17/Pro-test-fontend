@@ -1,4 +1,5 @@
 .logo {
+  display: block;
   color: var(--logo-stroke-color);
   fill: var(--logo-fill-color);
   stroke: currentColor;

@@ -4,7 +4,7 @@ import useLocalStorage from 'hooks/useLocalStorage';
 import { darkTheme, lightTheme, MaterialUISwitch } from 'utils/customSwitch';
 
 export default function ThemeSwitch({ className }) {
-  const [theme, setTheme] = useLocalStorage('theme', 'dark');
+  const [theme, setTheme] = useLocalStorage('theme', 'light');
 
   useEffect(() => {
     document.documentElement.setAttribute('theme-type', theme);
@@ -13,7 +13,6 @@ export default function ThemeSwitch({ className }) {
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       <MaterialUISwitch
-        sx={{ m: 1 }}
         checked={theme === 'dark'}
         onChange={() => {
           theme === 'dark' ? setTheme('light') : setTheme('dark');

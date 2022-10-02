@@ -1,37 +1,36 @@
-.container{
-    padding-top: 40px;
-    padding-bottom: 58px;
+.container {
+  padding-top: 40px;
+  padding-bottom: 58px;
 }
-.title{
-    font-size: 22px;
-        line-height: 27px;
-        text-align: center;
-        letter-spacing: 0.02em;
-        margin-bottom: 14px;
+.title {
+  font-size: 22px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+  color: var(--text-primary-color);
 }
 .line {
-    margin: 0 auto;
-    display: block;
-    width: 130px;
-    border: 1px solid #00122F;
-    margin-bottom: 20px;
-
+  margin: 0 auto;
+  display: block;
+  width: 130px;
+  border-top: 1px solid var(--line-home);
+  margin-bottom: 20px;
 }
- @media screen and (min-width:768px) {
-.container {
-        padding-bottom: 60px;
-    }
-    .title{
-    margin-bottom: 20px;
-    }
-.line{
-        width: 322px;
-    margin-bottom: 40px;
-}
-    
- }
-  @media screen and (min-width:1280px) {
-    .title::after {
-        left: 475px
-        }
+@media screen and (min-width: 768px) {
+  .container {
+    padding-bottom: 60px;
   }
+  .title {
+    margin-bottom: 20px;
+  }
+  .line {
+    width: 322px;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .title::after {
+    left: 475px;
+  }
+}
