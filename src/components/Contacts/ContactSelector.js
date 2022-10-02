@@ -8,7 +8,7 @@ const ContactSelector = [
   {
     id: '1',
     image: Max,
-    name: 'Максим Шумейко',
+    name: 'Maksym Shumeiko',
     role: 'TEAM LEAD',
     linkedin: 'https://www.linkedin.com/in/maksym-shumeiko-76b85a242/',
     gitHub: 'https://github.com/Lonardo17',
@@ -16,7 +16,7 @@ const ContactSelector = [
   {
     id: '2',
     image: Anna,
-    name: 'Анна Лахманюк',
+    name: 'Anna  Lakhmaniuk',
     role: 'SCRUM MASTER',
     linkedin: 'https://www.linkedin.com/in/anna-lakhmaniuk-b6a084244/',
     gitHub: 'https://github.com/AnnaLakhmaniyk',
@@ -24,7 +24,7 @@ const ContactSelector = [
   {
     id: '3',
     image: Vlad,
-    name: 'Владислав Авідзба',
+    name: 'Vladyslav Avidzba',
     role: 'DEVELOPER',
     linkedin: 'https://www.linkedin.com/in/vladyslav-avidzba-a5b379243/',
     gitHub: 'https://github.com/vladmw5',
@@ -32,7 +32,7 @@ const ContactSelector = [
   {
     id: '4',
     image: Nadia,
-    name: 'Надія Хоптюк',
+    name: 'Nadiia Khoptiuk',
     role: 'DEVELOPER',
     linkedin: 'https://www.linkedin.com/in/nadiia-khoptiuk-5b081a239/',
     gitHub: 'https://github.com/nadiakhoptiuk',
@@ -40,7 +40,7 @@ const ContactSelector = [
   {
     id: '5',
     image: Sacha,
-    name: 'Олександр Пустосмєхов',
+    name: 'Oleksandr Pustosmiekhov',
     role: 'DEVELOPER',
     linkedin: 'https://www.linkedin.com/in/aleksandr-pustosmekhov/',
     gitHub: 'https://github.com/Alexander-Pustosmekhov',
@@ -49,7 +49,7 @@ const ContactSelector = [
   {
     id: '6',
     image: Iva,
-    name: 'Іоанна Істоміна',
+    name: 'Ioanna Istomina',
     role: 'DEVELOPER',
     linkedin: 'https://www.linkedin.com/in/ioanna-istomina/',
     gitHub: 'https://github.com/Ioanna-Istomina',
