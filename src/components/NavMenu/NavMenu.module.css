@@ -22,19 +22,19 @@
 .link {
   color: var(--text-primary-color);
 }
-    .menu {
-      position: absolute;
-      z-index: 100;
-      left: 0;
-      top: var(--header-constant-height);
-      width: 100vw;
-      min-height: 702px;
-      height: calc(100vh - var(--header-constant-height));
-      background-color: var(--background-primary-color);
-    }
+.menu {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: var(--header-constant-height);
+  width: 100vw;
+  min-height: 702px;
+  height: 100vh;
+  background-color: var(--background-primary-color);
+  opacity: 1;
+}
 
 @media screen and (max-width: 767px) {
-
   .tab {
     height: 76px;
     display: flex;
