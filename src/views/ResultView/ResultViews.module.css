@@ -1,4 +1,4 @@
 .container {
   margin: 0 auto;
-  background-color: #f5f6fb;
+  background-color: var(--background-primary-color);
 }
