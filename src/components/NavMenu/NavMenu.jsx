@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { getIsLoggedIn } from 'redux/auth/authSelectors';
+import { useSelector } from 'react-redux';
 
 import LogoutButton from 'components/LogoutButton';
 import s from './NavMenu.module.css';
-import routes, { checkActive } from 'utils/router';
+import routes from 'utils/router';
 import Icon from 'utils/Icon';
 
 const NO_SCROLL = 'body-no-scroll';
@@ -11,8 +13,8 @@ const NO_SCROLL = 'body-no-scroll';
 const { home, materials, contacts } = routes;
 
 const NavMenu = () => {
+  const isLoggedIn = useSelector(getIsLoggedIn);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isLoggedIn = false; //TODO: add Redux Auth State support
 
   const toggleMenu = () => {
     document.body.classList.toggle(NO_SCROLL);
@@ -34,12 +36,7 @@ const NavMenu = () => {
           <ul className={s.list}>
             {isLoggedIn && (
               <li className={s.tab}>
-                <NavLink
-                  className={s.link}
-                  isActive={checkActive}
-                  onClick={toggleMenu}
-                  to={home}
-                >
+                <NavLink className={s.link} onClick={toggleMenu} to={home}>
                   Home
                 </NavLink>
               </li>

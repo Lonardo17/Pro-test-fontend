@@ -1,17 +1,19 @@
 import { NavLink } from 'react-router-dom';
+import { getIsLoggedIn } from 'redux/auth/authSelectors';
+import { useSelector } from 'react-redux';
 import s from './DesktopNavbar.module.css';
-import routes, { checkActive } from 'utils/router';
+import routes from 'utils/router';
 
 const { home, materials, contacts } = routes;
 
 const DesktopNavbar = () => {
-  const isLoggedIn = false; //TODO: add Redux Auth State support
+  const isLoggedIn = useSelector(getIsLoggedIn);
   return (
     <div className={s.wrapper}>
       <ul className={s.nav}>
         {isLoggedIn && (
           <li className={s.tab}>
-            <NavLink className={s.link} to={home} isActive={checkActive}>
+            <NavLink className={s.link} to={home}>
               Home
             </NavLink>
           </li>

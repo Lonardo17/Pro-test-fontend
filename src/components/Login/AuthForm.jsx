@@ -7,8 +7,10 @@ import {
 } from '../../redux/authAPI';
 import { toast } from 'react-toastify';
 import { setUser } from '../../redux/auth/authReducer';
+import Loader from 'components/Loader';
 
 export default function AuthForm() {
+  const [status, setStatus] = useState(false);
   const [user, setUserForm] = useState({ email: '', password: '' });
   const [error, setError] = useState({
     emailError: 'This is a required field',
@@ -130,11 +132,13 @@ export default function AuthForm() {
       toast.warn('Please enter your email and password');
       return;
     }
+    setStatus(true);
     authorizeUser(user)
       .unwrap()
       .then(data => {
         dispatch(
           setUser({
+            avatar: data.user.avatar,
             email: data.user.email,
             token: data.user.token,
           })
@@ -143,9 +147,13 @@ export default function AuthForm() {
           email: '',
           password: '',
         });
+        setStatus(false);
         toast.success('Welcome to Pro-Test');
       })
-      .catch(error => toast.error(error.data.message));
+      .catch(error => {
+        toast.error(error.data.message);
+        setStatus(false);
+      });
   };
 
   const onRegister = () => {
@@ -161,6 +169,7 @@ export default function AuthForm() {
           .then(data => {
             dispatch(
               setUser({
+                avatar: data.user.avatar,
                 email: data.user.email,
                 token: data.user.token,
               })
@@ -169,10 +178,13 @@ export default function AuthForm() {
               email: '',
               password: '',
             });
+            setStatus(false);
           })
       )
-      .catch(error => toast.error(error.data.message));
-    toast.success('User successfully registered');
+      .catch(error => {
+        toast.error(error.data.message);
+        setStatus(false);
+      });
   };
 
   // const login = useGoogleLogin({
@@ -193,68 +205,73 @@ export default function AuthForm() {
   // });
 
   return (
-    <form className={s.Form}>
-      <a href="http://localhost:3001/users/google">google login</a>
-      <p className={s.firstText}>You can use Google Account to authorize:</p>
-      <button className={s.btnGoogle}>
-        <svg className={s.btnIcon} width="18" height="18">
-          <use href="../../img/symbol-defs.svg#icon-google"></use>
-        </svg>
-        Google
-      </button>
-      <p className={s.secondText}>
-        Or login to our app using e-mail and password:
-      </p>
-      <label className={s.label}>
-        <input
-          className={s.inputMail}
-          type="email"
-          placeholder="E-mail"
-          required
-          id="email"
-          value={email}
-          onChange={onInput}
-          onBlur={onBlur}
-          name="email"
-        />
-        {emailDirty && emailError && <p className={s.message}>{emailError}</p>}
-        {/* {emailDirty && emailError && toast.warn(emailError)} */}
-      </label>
-      <label className={s.label}>
-        <input
-          className={s.inputPassword}
-          type="password"
-          placeholder="Password"
-          required
-          id="password"
-          value={password}
-          onChange={onInput}
-          onBlur={onBlur}
-          name="password"
-        />
-        {passwordDirty && passwordError && (
-          <p className={s.message}>{passwordError}</p>
-        )}
-        {/* {passwordDirty && passwordError && toast.warn(passwordError)} */}
-      </label>
-      <div className={s.buttonWraper}>
-        <button
-          className={s.buttonSignIn}
-          type="button"
-          onClick={onLogin}
-          disabled={!formValidity}
-        >
-          Sign in
+    <div>
+      {status && <Loader />}
+      <form className={s.Form}>
+        <a href="http://localhost:3001/users/google">google login</a>
+        <p className={s.firstText}>You can use Google Account to authorize:</p>
+        <button className={s.btnGoogle}>
+          <svg className={s.btnIcon} width="18" height="18">
+            <use href="../../img/symbol-defs.svg#icon-google"></use>
+          </svg>
+          Google
         </button>
-        <button
-          className={s.buttonSignUp}
-          type="button"
-          onClick={onRegister}
-          disabled={!formValidity}
-        >
-          Sign up
-        </button>
-      </div>
-    </form>
+        <p className={s.secondText}>
+          Or login to our app using e-mail and password:
+        </p>
+        <label className={s.label}>
+          <input
+            className={s.inputMail}
+            type="email"
+            placeholder="E-mail"
+            required
+            id="email"
+            value={email}
+            onChange={onInput}
+            onBlur={onBlur}
+            name="email"
+          />
+          {emailDirty && emailError && (
+            <p className={s.message}>{emailError}</p>
+          )}
+          {/* {emailDirty && emailError && toast.warn(emailError)} */}
+        </label>
+        <label className={s.label}>
+          <input
+            className={s.inputPassword}
+            type="password"
+            placeholder="Password"
+            required
+            id="password"
+            value={password}
+            onChange={onInput}
+            onBlur={onBlur}
+            name="password"
+          />
+          {passwordDirty && passwordError && (
+            <p className={s.message}>{passwordError}</p>
+          )}
+          {/* {passwordDirty && passwordError && toast.warn(passwordError)} */}
+        </label>
+        <div className={s.buttonWraper}>
+          <button
+            className={s.buttonSignIn}
+            type="button"
+            onClick={onLogin}
+            disabled={!formValidity}
+          >
+            Sign in
+          </button>
+          <button
+            className={s.buttonSignUp}
+            type="button"
+            onClick={onRegister}
+            disabled={!formValidity}
+          >
+            Sign up
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }

@@ -42,17 +42,10 @@
     color: var(--text-primary-color);
     position: relative;
     cursor: pointer;
+    text-decoration: revert;
 }
 
 
-.linkRsourse::after {
-    content: '';
-    display: block;
-    position: absolute;
-    border: 0.3px solid var(--text-primary-color);
-    bottom: -1px;
-    width: 100%;
-}
 
 @media screen and (min-width: 768px) {
    

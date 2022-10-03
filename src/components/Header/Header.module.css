@@ -72,9 +72,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .header {
-    padding: 20px 0 20px 16px;
-  }
+
 
   .desktopLogout::before {
     width: 1px;
