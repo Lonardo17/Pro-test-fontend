@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { getResult } from 'services/resultAPI';
 import { testTypeSelector } from 'redux/testType/testTypeSelector';
 import { useDispatch, } from 'react-redux';
-import { seeHuman } from 'redux/human/humanSlices';
+import { resetHuman } from 'redux/human/humanSlices';
 import Loader from 'components/Loader';
 
 const ResultPage = () => {
@@ -17,7 +17,7 @@ const ResultPage = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
-  dispatch(seeHuman())
+  dispatch(resetHuman())
 
   useEffect(() => {
     setIsLoading(true);
