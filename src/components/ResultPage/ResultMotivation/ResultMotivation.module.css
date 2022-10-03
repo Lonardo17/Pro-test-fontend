@@ -13,7 +13,7 @@
   margin-top: 20px;
   margin-bottom: 18px;
 
-  color: #000000;
+  color: var(--text-primary-color);
 }
 
 .motivationText {
@@ -23,13 +23,13 @@
   letter-spacing: 0.02em;
   margin: 0;
 
-  color: #000000;
+  color: var(--text-primary-color);
 }
 
 .button {
   width: 190px;
   height: 48px;
-  background-color: #ff6b09;
+  background-color: var(--btn-primary-color);
   text-decoration: none;
   font-size: 14px;
   line-height: 16px;
@@ -37,7 +37,7 @@
   align-items: center;
   justify-content: center;
   letter-spacing: 0.02em;
-  color: #ffffff;
+  color: var(--accent-btn-text-color);
 
   margin-bottom: 51px;
   margin-top: 20px;

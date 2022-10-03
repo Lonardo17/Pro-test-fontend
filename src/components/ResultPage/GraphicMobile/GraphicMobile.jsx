@@ -23,7 +23,6 @@ const renderCustomizedLabel = ({
       <text
         x={x}
         y={y}
-        fill="white"
         textAnchor={x > cx ? 'start' : 'end'}
         dominantBaseline="central"
         className={s.label}
@@ -33,7 +32,6 @@ const renderCustomizedLabel = ({
       <text
         x={x}
         y={y + 8}
-        fill="white"
         textAnchor={x > cx ? 'start' : 'end'}
         dominantBaseline="central"
         className={s.label}
