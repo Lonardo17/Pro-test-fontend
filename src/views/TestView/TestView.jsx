@@ -1,6 +1,6 @@
 import TestHeader from 'components/TestHeader';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import { testTypeSelector } from 'redux/testType/testTypeSelector';
 
 import {
@@ -12,10 +12,13 @@ import { techTest } from 'utils/constants';
 import TestForm from 'components/TestForm';
 import useLocalStorage from 'hooks/useLocalStorage';
 import Loader from 'components/Loader';
+import { seeHuman } from 'redux/human/humanSlices';
 export default function TestView() {
   const testType = useSelector(testTypeSelector);
   const [status, setStatus] = useState(false);
   const [testQuestions, setTestQuestions] = useLocalStorage('questions', null);
+  const dispatch = useDispatch();
+  dispatch(seeHuman())
 
   useEffect(() => {
     if (!testType) return;

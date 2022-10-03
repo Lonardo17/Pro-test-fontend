@@ -136,3 +136,7 @@ a.active::after {
   position: absolute;
   background-color: var(--btn-primary-color);
 }
+
+a, button, p, li, q, label, h1, h2, h3,ul {
+  z-index: 1;
+}

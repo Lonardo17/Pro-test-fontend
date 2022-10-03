@@ -5,6 +5,7 @@
   align-items: center;
   background-color: var(--btn-third-color);
   margin-top: auto;
+  z-index: 1;
 }
 
 .text {
