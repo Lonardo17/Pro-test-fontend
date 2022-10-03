@@ -19,8 +19,8 @@ const renderCustomizedLabel = ({
   const cos = Math.cos(RADIAN * midAngle);
   const sx = cx + (outerRadius - 40) * cos;
   const sy = cy - (innerRadius - 70) * sin;
-  const mx = cx + (outerRadius - 20) * cos;
-  const my = cy - (outerRadius - 170) * sin;
+  const mx = cx + (outerRadius + 20) * cos;
+  const my = cy - (outerRadius - 150) * sin;
   const ex = mx + (cos >= 0 ? 3 : -3) * 22;
   const ey = my;
   const textAnchor = cos >= 0 ? 'start' : 'end';
@@ -47,10 +47,10 @@ const renderCustomizedLabel = ({
         fill={fill}
         width="25"
         height="25"
-        // x={ex + (cos >= 0 ? 1 : -3) * 12}
-        // y={ey + (cos >= 0 ? -1 : -1) * 12}
-        x={695 - outerRadius}
-        y={100}
+        x={ex + (cos >= 0 ? 1 : -3) * 12}
+        y={ey + (cos >= 0 ? -1 : -1) * 12}
+        // x={695 - outerRadius}
+        // y={100}
       />
     </>
   );
@@ -58,8 +58,8 @@ const renderCustomizedLabel = ({
 
 export default function Graphic({ percentCorrect, percentIncorrect }) {
   const data = [
-    { name: 'Correct', value: Number(percentCorrect) },
-    { name: 'Incorrect', value: Number(percentIncorrect) },
+    { name: 'Correct', value: 40 },
+    { name: 'Incorrect', value: 60 },
   ];
   return (
     <PieChart width={730} height={286} className={s.graphic}>

@@ -44,7 +44,7 @@ export const App = () => {
                 index
                 element={
                   <PrivateRoute>
-                    <HomeView />
+                  <HomeView />
                   </PrivateRoute>
                 }
               />

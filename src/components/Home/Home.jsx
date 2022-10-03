@@ -2,7 +2,8 @@ import s from './Home.module.css';
 import { Link } from 'react-router-dom';
 import Icon from '../../utils/Icon';
 import path from 'utils/router';
-import { useDispatch } from 'react-redux';
+import { useDispatch, } from 'react-redux';
+import { seeHuman } from 'redux/human/humanSlices';
 import { setTestType } from 'redux/testType/testTypeSlice';
 import { theoryTest, techTest } from 'utils/constants';
 const { theoryTestPath, techTestPath } = path;
@@ -10,6 +11,7 @@ const { theoryTestPath, techTestPath } = path;
 export default function Home() {
   localStorage.clear();
   const dispatch = useDispatch();
+  dispatch(seeHuman())
   return (
     <div className={s.container}>
       <q className={s.cite}>

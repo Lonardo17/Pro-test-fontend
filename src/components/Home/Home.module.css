@@ -1,11 +1,12 @@
-.container {
-  width: 320px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: var(--text-primary-color);
-  margin: 0px auto;
-  padding-top: 32px;
-  padding-bottom: 30px;
+.container{
+    width: 320px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin: 0px auto;
+    padding-top: 32px;
+    padding-bottom: 30px;
+    margin-bottom: auto;
 }
 
 .cite {
