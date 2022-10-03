@@ -218,7 +218,7 @@ export default function AuthForm() {
       <p className={s.firstText}>You can use Google Account to authorize:</p>
       <button className={s.btnGoogle} onClick={googleLogins}>
         <svg className={s.btnIcon} width="18" height="18">
-          <use href="../../img/symbol-defs.svg#icon-google"></use>
+          <use href="../../img/sprite.svg#icon-google"></use>
         </svg>
         Google
       </button>
@@ -260,7 +260,7 @@ export default function AuthForm() {
         </label>
         <div className={s.buttonWraper}>
           <button
-            className={s.buttonSignIn}
+            className={!formValidity ? s.buttonSignInDisabled : s.buttonSignIn}
             type="button"
             onClick={onLogin}
             disabled={!formValidity}
@@ -268,7 +268,7 @@ export default function AuthForm() {
             Sign in
           </button>
           <button
-            className={!formValidity ? s.btnSubmitDisabled : s.buttonSignUp}
+            className={!formValidity ? s.buttonSignUpDisabled : s.buttonSignUp}
             type="button"
             onClick={onRegister}
             disabled={!formValidity}
