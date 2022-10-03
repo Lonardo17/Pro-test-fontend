@@ -2,7 +2,7 @@ import Iva from '../../img/imgTeam/Iva.jpeg';
 import Vlad from '../../img/imgTeam/Vlad.jpg';
 import Anna from '../../img/imgTeam/Anna.jpeg';
 import Max from '../../img/imgTeam/Max.jpg';
-import Nadia from '../../img/imgTeam/Nadia1.jpg';
+import Nadia from '../../img/imgTeam/Nadia.jpg';
 import Sacha from '../../img/imgTeam/Sacha.jpeg';
 const ContactSelector = [
   {
@@ -23,7 +23,7 @@ const ContactSelector = [
   },
   {
     id: '3',
-    image: Vlad,
+    image: Iva,
     name: 'Vladyslav Avidzba',
     role: 'DEVELOPER',
     linkedin: 'https://www.linkedin.com/in/vladyslav-avidzba-a5b379243/',
@@ -48,7 +48,7 @@ const ContactSelector = [
 
   {
     id: '6',
-    image: Iva,
+    image: Vlad,
     name: 'Ioanna Istomina',
     role: 'DEVELOPER',
     linkedin: 'https://www.linkedin.com/in/ioanna-istomina/',
