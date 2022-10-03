@@ -1,0 +1,1 @@
+export const seeHuman = state => state.human;

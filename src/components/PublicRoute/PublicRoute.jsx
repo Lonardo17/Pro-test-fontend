@@ -6,7 +6,6 @@ import routes from 'utils/router';
 
 const PublicRoute = ({ navTo = routes.home, children }) => {
   const isLoggedIn = useSelector(getIsLoggedIn);
-  console.log(isLoggedIn);
   return isLoggedIn ? <Navigate to={navTo} /> : children;
 };
 

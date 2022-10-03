@@ -4,6 +4,7 @@
   align-items: center;
   background-color: var(--background-primary-color);
   border-bottom: 1px solid var(--header-border-color);
+  z-index: 1;
 }
 
 .wrapper {

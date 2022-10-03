@@ -6,6 +6,8 @@ import { answersSelector } from 'redux/answers/answersSelectors';
 import { useEffect, useState } from 'react';
 import { getResult } from 'services/resultAPI';
 import { testTypeSelector } from 'redux/testType/testTypeSelector';
+import { useDispatch, } from 'react-redux';
+import { resetHuman } from 'redux/human/humanSlices';
 import Loader from 'components/Loader';
 
 const ResultPage = () => {
@@ -14,6 +16,8 @@ const ResultPage = () => {
   const [result, setResult] = useState(0);
 
   const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
+  dispatch(resetHuman())
 
   useEffect(() => {
     setIsLoading(true);

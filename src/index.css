@@ -136,3 +136,9 @@ a.active::after {
   position: absolute;
   background-color: var(--btn-primary-color);
 }
+
+@media screen and (min-width: 1280px) {
+a, button, p, li, label,ul {
+  z-index: 1;
+}
+}
