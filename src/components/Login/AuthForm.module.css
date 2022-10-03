@@ -31,12 +31,17 @@
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   background-color: var(--btn-google-color);
   border: none;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btnGoogle:hover,
 .btnGoogle:focus {
   background-color: var(--btn-primary-color);
   color: var(--text-secondary-color);
+  transform: scale(1.03);
+  box-shadow: none;
 }
 
 .btnIcon {
@@ -99,6 +104,10 @@
   color: var(--text-primary-color);
   background-color: inherit;
   border: 1px solid #ced2d1;
+
+  box-shadow: 4px 4px 8px 0 rgb(34 60 80 / 20%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .buttonSignIn:hover,
@@ -106,6 +115,21 @@
   background-color: var(--btn-primary-color);
   color: var(--text-secondary-color);
   border-color: none;
+  transform: scale(1.03);
+  box-shadow: none;
+}
+
+.buttonSignInDisabled {
+  composes: buttonSignIn;
+  background-color: var(--disabled-btn-color);
+  color: var(--accent-btn-text-color);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttonSignInDisabled:hover,
+.buttonSignInDisabled:focus {
+  background-color: var(--disabled-btn-color);
 }
 
 .buttonSignUp {
@@ -124,6 +148,10 @@
   color: var(--text-primary-color);
   background-color: inherit;
   border: 1px solid #ced2d1;
+
+  box-shadow: 4px 4px 8px 0 rgb(34 60 80 / 20%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .buttonSignUp:hover,
@@ -131,6 +159,21 @@
   background-color: var(--btn-primary-color);
   color: var(--text-secondary-color);
   border-color: none;
+  transform: scale(1.03);
+  box-shadow: none;
+}
+
+.buttonSignUpDisabled {
+  composes: buttonSignUp;
+  background-color: var(--disabled-btn-color);
+  color: var(--accent-btn-text-color);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttonSignUpDisabled:hover,
+.buttonSignUpDisabled:focus {
+  background-color: var(--disabled-btn-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -182,7 +225,6 @@
 
 @media screen and (min-width: 1280px) {
   .Form {
-    z-index: 1;
     margin: 0;
   }
 }
