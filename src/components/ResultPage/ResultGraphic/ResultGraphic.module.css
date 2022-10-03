@@ -10,7 +10,7 @@
   letter-spacing: 0.02em;
   margin: 0;
 
-  color: #000000;
+  color: var(--text-primary-color);
 }
 
 .typeTest {
@@ -25,7 +25,7 @@
   margin-bottom: 16px;
   margin-top: 12px;
 
-  color: #000000;
+  color: var(--text-primary-color);
 }
 
 .line {
@@ -51,7 +51,7 @@
   letter-spacing: 0.02em;
   margin: 0;
 
-  color: #000000;
+  color:var(--text-primary-color);
 }
 
 .horizonLine {

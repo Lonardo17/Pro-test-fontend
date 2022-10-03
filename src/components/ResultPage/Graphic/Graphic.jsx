@@ -4,6 +4,7 @@ import { PieChart, Pie, Cell } from 'recharts';
 const COLORS = ['#FF6B01', '#D7D7D7'];
 
 const RADIAN = Math.PI / 180;
+const theme = localStorage.getItem('theme');
 
 const renderCustomizedLabel = ({
   cx,
@@ -37,8 +38,8 @@ const renderCustomizedLabel = ({
       <text
         x={ex + (cos >= 0 ? 3 : -3) * 15}
         y={ey + (cos >= 0 ? 0.5 : 0.5) * 12}
+        fill={theme === 'dark' ? '#FFFFFF' : '#000000'}
         textAnchor={textAnchor}
-        fill="#333"
         className={s.labelNumber}
       >
         {`${value}% ${name}`}
