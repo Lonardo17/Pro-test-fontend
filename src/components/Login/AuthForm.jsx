@@ -4,9 +4,11 @@ import { useDispatch } from 'react-redux';
 import {
   useAddUserMutation,
   useAuthorizeUserMutation,
+  useAuthorizeUserByGoogleMutation,
 } from '../../redux/authAPI';
 import { toast } from 'react-toastify';
 import { setUser } from '../../redux/auth/authReducer';
+import { useGoogleLogin } from '@react-oauth/google';
 import Loader from 'components/Loader';
 
 export default function AuthForm() {
@@ -30,6 +32,7 @@ export default function AuthForm() {
 
   const [registerUser] = useAddUserMutation();
   const [authorizeUser] = useAuthorizeUserMutation();
+  const [authorizeUserByGoogle] = useAuthorizeUserByGoogleMutation();
 
   const onInput = e => {
     setUserForm(prevState => {
@@ -187,38 +190,42 @@ export default function AuthForm() {
       });
   };
 
-  // const login = useGoogleLogin({
-  //   onSuccess: async ({ code }) => {
-  //     console.log(code);
-  //     // googleLogin({ code })
-  //     //   .unwrap()
-  //     //   .then(data => {
-  //     //     dispatch(setUser(data));
-  //     //   })
-  //     //   .catch(data => {
-  //     //     toast.error(data.message, {
-  //     //       position: toast.POSITION.TOP_RIGHT,
-  //     //     });
-  //     //   });
-  //   },
-  //   flow: 'auth-code',
-  // });
+  const googleLogins = useGoogleLogin({
+    onSuccess: async ({ code }) => {
+      authorizeUserByGoogle({ code })
+        .unwrap()
+        .then(data => {
+          dispatch(
+            setUser({
+              avatar: data.user.avatar,
+              email: data.user.email,
+              token: data.user.token,
+            })
+          );
+        })
+        .catch(data => {
+          toast.error(data.message, {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        });
+    },
+    flow: 'auth-code',
+  });
 
   return (
-    <div>
+    <div className={s.Form}>
       {status && <Loader />}
-      <form className={s.Form}>
-        <a href="http://localhost:3001/users/google">google login</a>
-        <p className={s.firstText}>You can use Google Account to authorize:</p>
-        <button className={s.btnGoogle}>
-          <svg className={s.btnIcon} width="18" height="18">
-            <use href="../../img/symbol-defs.svg#icon-google"></use>
-          </svg>
-          Google
-        </button>
-        <p className={s.secondText}>
-          Or login to our app using e-mail and password:
-        </p>
+      <p className={s.firstText}>You can use Google Account to authorize:</p>
+      <button className={s.btnGoogle} onClick={googleLogins}>
+        <svg className={s.btnIcon} width="18" height="18">
+          <use href="../../img/symbol-defs.svg#icon-google"></use>
+        </svg>
+        Google
+      </button>
+      <p className={s.secondText}>
+        Or login to our app using e-mail and password:
+      </p>
+      <form>
         <label className={s.label}>
           <input
             className={s.inputMail}
@@ -234,7 +241,6 @@ export default function AuthForm() {
           {emailDirty && emailError && (
             <p className={s.message}>{emailError}</p>
           )}
-          {/* {emailDirty && emailError && toast.warn(emailError)} */}
         </label>
         <label className={s.label}>
           <input
@@ -251,7 +257,6 @@ export default function AuthForm() {
           {passwordDirty && passwordError && (
             <p className={s.message}>{passwordError}</p>
           )}
-          {/* {passwordDirty && passwordError && toast.warn(passwordError)} */}
         </label>
         <div className={s.buttonWraper}>
           <button
@@ -263,7 +268,7 @@ export default function AuthForm() {
             Sign in
           </button>
           <button
-            className={s.buttonSignUp}
+            className={!formValidity ? s.btnSubmitDisabled : s.buttonSignUp}
             type="button"
             onClick={onRegister}
             disabled={!formValidity}
