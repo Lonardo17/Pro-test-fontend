@@ -213,14 +213,19 @@ export default function AuthForm() {
   });
 
   return (
-    <div className={s.Form}>
-      {status && <Loader />}
-      <p className={s.firstText}>You can use Google Account to authorize:</p>
-      <button className={s.btnGoogle} onClick={googleLogins}>
-        <svg className={s.btnIcon} width="18" height="18">
-          <use href="../../img/sprite.svg#icon-google"></use>
-        </svg>
-        Google
+    <>
+      {status ? (
+        <Loader />
+      ) : (
+        <div className={s.Form}>
+          <p className={s.firstText}>
+            You can use Google Account to authorize:
+          </p>
+          <button className={s.btnGoogle} onClick={googleLogins}>
+            <svg className={s.btnIcon} width="18" height="18">
+              <use href="../../img/symbol-defs.svg#icon-google"></use>
+            </svg>
+            Google
       </button>
       <p className={s.secondText}>
         Or login to our app using e-mail and password:
@@ -274,9 +279,11 @@ export default function AuthForm() {
             disabled={!formValidity}
           >
             Sign up
-          </button>
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
+      )}
+    </>
   );
 }

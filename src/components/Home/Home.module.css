@@ -1,12 +1,12 @@
-.container{
-    width: 320px;
-    text-align: center;
-    letter-spacing: 0.02em;
-    color: #000000;
-    margin: 0px auto;
-    padding-top: 32px;
-    padding-bottom: 30px;
-    margin-bottom: auto;
+.container {
+  width: 320px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--text-primary-color);
+  margin: 0px auto;
+  padding-top: 32px;
+  padding-bottom: 30px;
+  margin-bottom: auto;
 }
 
 .cite {
@@ -24,6 +24,7 @@
   font-size: 12px;
   line-height: 1.17;
   margin-top: 12px;
+  color: var(--text-primary-color);
 }
 .description {
   font-size: 10px;
@@ -63,8 +64,8 @@
 .link:hover,
 .link:focus {
   transform: scale(1.03);
-    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
-        0px 2px 1px rgb(0 0 0 / 20%);
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+    0px 2px 1px rgb(0 0 0 / 20%);
 }
 
 .arrowIconTechBtn {

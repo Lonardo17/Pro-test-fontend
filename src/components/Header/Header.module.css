@@ -8,7 +8,6 @@
 }
 
 .wrapper {
-  /* height: 100%; */
   display: flex;
   align-items: center;
 }
@@ -60,7 +59,7 @@
 
   .desktopLogout::before {
     width: 1px;
-    height: 72px;
+    height: 74px;
     content: '';
     position: absolute;
     left: 0;
@@ -73,8 +72,6 @@
 }
 
 @media screen and (min-width: 1280px) {
-
-
   .desktopLogout::before {
     width: 1px;
     height: 72px;
@@ -82,6 +79,10 @@
     position: absolute;
     left: 0;
     background-color: var(--header-border-color);
+  }
+
+  .themeSwitch {
+    margin: 0 80px;
   }
 }
 .nav {

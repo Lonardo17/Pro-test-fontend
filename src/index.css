@@ -35,6 +35,7 @@ html[theme-type='light'] {
   --btn-secondary-color: #ffffff;
   --btn-third-color: #02172a;
   --btn-google-color: #fafafa;
+
   --input-border-color: #ced2d1;
   --disabled-btn-color: #bbbaba;
   --shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
@@ -137,8 +138,10 @@ a.active::after {
   background-color: var(--btn-primary-color);
 }
 
+
 @media screen and (min-width: 1280px) {
 a, button, p, li, label,ul {
   z-index: 1;
 }
 }
+
