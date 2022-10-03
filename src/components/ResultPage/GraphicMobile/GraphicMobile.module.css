@@ -4,12 +4,12 @@
 
 .label {
   font-family: 'Montserrat Medium';
-  font-size: 8px;
+  font-size: 10px;
   line-height: 9px;
 
   letter-spacing: 0.02em;
 
-  color: #000000;
+  color: var(--text-primary-color);
 }
 
 .labelNumber {
@@ -19,14 +19,7 @@
   letter-spacing: 0.02em;
   margin-bottom: 9px;
 
-  color: #000000;
-}
-
-.labelNumber::before {
-  content: '';
-  height: 14px;
-  width: 14px;
-  color: #000000;
+  color: var(--text-primary-color);
 }
 
 .square {
