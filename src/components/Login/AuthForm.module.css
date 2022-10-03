@@ -182,6 +182,7 @@
 
 @media screen and (min-width: 1280px) {
   .Form {
+    z-index: 1;
     margin: 0;
   }
 }
