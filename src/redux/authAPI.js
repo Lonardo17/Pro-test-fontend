@@ -16,18 +16,6 @@ export const authApi = createApi({
       }
       return headers;
     },
-    // prepareHeaders: headers => {
-    //   const res = localStorage.getItem('user');
-    //   if (!res) {
-    //     return headers;
-    //   }
-    //   const token = JSON.parse(res).token;
-    //   if (token) {
-    //     headers.set('authorization', `Bearer ${token}`);
-    //     return headers;
-    //   }
-    //   return headers;
-    // },
   }),
   tagTypes: ['Contacts', 'Users'],
   endpoints: builder => ({
@@ -38,9 +26,6 @@ export const authApi = createApi({
         body: user,
       }),
       invalidatesTags: ['Users'],
-      // transformResponse: result => {
-      //   // localStorage.setItem('user', JSON.stringify(result));
-      // },
     }),
     authorizeUser: builder.mutation({
       query(user) {
@@ -51,9 +36,16 @@ export const authApi = createApi({
         };
       },
       invalidatesTags: ['Users'],
-      // transformResponse: result => {
-      //   // localStorage.setItem('user', JSON.stringify(result));
-      // },
+    }),
+    authorizeUserByGoogle: builder.mutation({
+      query(code) {
+        return {
+          url: `users/googlelogin`,
+          method: 'POST',
+          body: code,
+        };
+      },
+      invalidatesTags: ['Users'],
     }),
     logOutUser: builder.mutation({
       query() {
@@ -62,9 +54,6 @@ export const authApi = createApi({
         };
       },
       invalidatesTags: ['Users'],
-      // transformResponse: () => {
-      //   // localStorage.setItem('user', '');
-      // },
     }),
     getUser: builder.query({
       query() {
@@ -81,4 +70,5 @@ export const {
   useAuthorizeUserMutation,
   useLogOutUserMutation,
   useGetUserQuery,
+  useAuthorizeUserByGoogleMutation,
 } = authApi;
