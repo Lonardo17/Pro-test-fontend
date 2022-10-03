@@ -9,7 +9,7 @@
 
 @media screen and (min-width: 768px) {
   .tab:not(:last-child) {
-    margin-right: 60px;
+    margin-right: 50px;
   }
 }
 

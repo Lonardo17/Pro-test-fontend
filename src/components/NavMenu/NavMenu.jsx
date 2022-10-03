@@ -36,7 +36,7 @@ const NavMenu = () => {
           <ul className={s.list}>
             {isLoggedIn && (
               <li className={s.tab}>
-                <NavLink className={s.link} onClick={toggleMenu} to={home}>
+                <NavLink className={s.link} onClick={toggleMenu} end to={home}>
                   Home
                 </NavLink>
               </li>

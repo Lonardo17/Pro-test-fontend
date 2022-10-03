@@ -13,7 +13,7 @@ const DesktopNavbar = () => {
       <ul className={s.nav}>
         {isLoggedIn && (
           <li className={s.tab}>
-            <NavLink className={s.link} to={home}>
+            <NavLink className={s.link} end to={home}>
               Home
             </NavLink>
           </li>
