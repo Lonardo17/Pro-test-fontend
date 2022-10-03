@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   email: '',
+  avatar: '',
   token: null,
   refreshToken: null,
   isLoggedIn: false,

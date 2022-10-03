@@ -30,6 +30,13 @@
   color: var(--accent-btn-text-color);
   border: none;
   cursor: pointer;
+  box-shadow: 4px 4px 8px 0 rgb(34 60 80 / 20%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.finishTestBtn:hover,
+.finishTestBtn:focus {
+  transform: scale(1.03);
+ box-shadow: none;
 }
 
 @media screen and (min-width: 768px) {
