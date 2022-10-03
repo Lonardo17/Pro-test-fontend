@@ -213,70 +213,77 @@ export default function AuthForm() {
   });
 
   return (
-    <div className={s.Form}>
-      {status && <Loader />}
-      <p className={s.firstText}>You can use Google Account to authorize:</p>
-      <button className={s.btnGoogle} onClick={googleLogins}>
-        <svg className={s.btnIcon} width="18" height="18">
-          <use href="../../img/symbol-defs.svg#icon-google"></use>
-        </svg>
-        Google
-      </button>
-      <p className={s.secondText}>
-        Or login to our app using e-mail and password:
-      </p>
-      <form>
-        <label className={s.label}>
-          <input
-            className={s.inputMail}
-            type="email"
-            placeholder="E-mail"
-            required
-            id="email"
-            value={email}
-            onChange={onInput}
-            onBlur={onBlur}
-            name="email"
-          />
-          {emailDirty && emailError && (
-            <p className={s.message}>{emailError}</p>
-          )}
-        </label>
-        <label className={s.label}>
-          <input
-            className={s.inputPassword}
-            type="password"
-            placeholder="Password"
-            required
-            id="password"
-            value={password}
-            onChange={onInput}
-            onBlur={onBlur}
-            name="password"
-          />
-          {passwordDirty && passwordError && (
-            <p className={s.message}>{passwordError}</p>
-          )}
-        </label>
-        <div className={s.buttonWraper}>
-          <button
-            className={s.buttonSignIn}
-            type="button"
-            onClick={onLogin}
-            disabled={!formValidity}
-          >
-            Sign in
+    <>
+      {status ? (
+        <Loader />
+      ) : (
+        <div className={s.Form}>
+          <p className={s.firstText}>
+            You can use Google Account to authorize:
+          </p>
+          <button className={s.btnGoogle} onClick={googleLogins}>
+            <svg className={s.btnIcon} width="18" height="18">
+              <use href="../../img/symbol-defs.svg#icon-google"></use>
+            </svg>
+            Google
           </button>
-          <button
-            className={!formValidity ? s.btnSubmitDisabled : s.buttonSignUp}
-            type="button"
-            onClick={onRegister}
-            disabled={!formValidity}
-          >
-            Sign up
-          </button>
+          <p className={s.secondText}>
+            Or login to our app using e-mail and password:
+          </p>
+          <form>
+            <label className={s.label}>
+              <input
+                className={s.inputMail}
+                type="email"
+                placeholder="E-mail"
+                required
+                id="email"
+                value={email}
+                onChange={onInput}
+                onBlur={onBlur}
+                name="email"
+              />
+              {emailDirty && emailError && (
+                <p className={s.message}>{emailError}</p>
+              )}
+            </label>
+            <label className={s.label}>
+              <input
+                className={s.inputPassword}
+                type="password"
+                placeholder="Password"
+                required
+                id="password"
+                value={password}
+                onChange={onInput}
+                onBlur={onBlur}
+                name="password"
+              />
+              {passwordDirty && passwordError && (
+                <p className={s.message}>{passwordError}</p>
+              )}
+            </label>
+            <div className={s.buttonWraper}>
+              <button
+                className={s.buttonSignIn}
+                type="button"
+                onClick={onLogin}
+                disabled={!formValidity}
+              >
+                Sign in
+              </button>
+              <button
+                className={!formValidity ? s.btnSubmitDisabled : s.buttonSignUp}
+                type="button"
+                onClick={onRegister}
+                disabled={!formValidity}
+              >
+                Sign up
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
+      )}
+    </>
   );
 }

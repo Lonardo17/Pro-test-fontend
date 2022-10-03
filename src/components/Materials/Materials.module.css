@@ -1,100 +1,91 @@
 .literature {
-    margin-bottom: 32px;
-    width: 207px;
+  margin-bottom: 32px;
+  width: 207px;
 }
 
 .resources {
-    width: 207px;
+  width: 207px;
 }
 
 .title {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-    letter-spacing: 0.02em;
-    position: relative;
-    margin-bottom: 20px;
-    width: 129px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  position: relative;
+  margin-bottom: 20px;
+  width: 129px;
 }
 
 .title::after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 150px;
-    border: 1px solid #00122F;
-    bottom: -12px;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 150px;
+  border-bottom: 1px solid #e2e3e5;
+  bottom: -12px;
 }
 
-
 .linkLiteratur {
-    font-size: 10px;
-    line-height: 16px;
-    letter-spacing: 0.02em;
-    color: var(--text-primary-color);
-    cursor: pointer;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: #000;
+  cursor: pointer;
 }
 
 .linkRsourse {
-    font-size: 10px;
-    line-height: 16px;
-    letter-spacing: 0.02em;
-    color: var(--text-primary-color);
-    position: relative;
-    cursor: pointer;
-    text-decoration: revert;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: var(--text-primary-color);
+  position: relative;
+  cursor: pointer;
+  text-decoration: revert;
+  color: #000;
 }
 
-
-
 @media screen and (min-width: 768px) {
-   
+  .literature {
+    width: 336px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 
-    .literature {
-        width: 336px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end
-    }
+  .resources {
+    width: 336px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 
-    .resources {
-        width: 336px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end
-    }
+  .title {
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    margin-bottom: 40px;
+    width: inherit;
+  }
 
-    .title {
-        font-size: 22px;
-        line-height: 30px;
-        letter-spacing: 0.02em;
-        margin-bottom: 40px;
-        width: inherit;
-    }
+  .title::after {
+    content: '';
+    bottom: -20px;
+    width: 100%;
+  }
 
-    .title::after {
-        content: '';
-        bottom: -20px;
-        width: 100%;
-    }
+  .list {
+    width: 254px;
+  }
 
-    .list {
-        width: 254px;
+  .linkLiteratur {
+    font-size: 14px;
+    line-height: 22px;
+  }
 
-    }
-
-    .linkLiteratur {
-        font-size: 14px;
-        line-height: 22px;
-
-
-    }
-
-    .linkRsourse {
-        font-size: 14px;
-        line-height: 22px;
-        letter-spacing: 0.02em;
-
-    }
-
+  .linkRsourse {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+  }
 }

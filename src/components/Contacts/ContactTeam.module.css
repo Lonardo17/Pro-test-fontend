@@ -15,9 +15,9 @@
 
 .item {
   margin-bottom: 30px;
-  background-color: var(--text-secondary-color);
+  background-color: var(--background-secondary-color);
   width: 280px;
-  height: 370px;
+  height: 380px;
   position: relative;
   box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
     0px 2px 1px rgb(0 0 0 / 20%);
@@ -27,36 +27,42 @@
 .item:hover,
 .item:focus {
   transform: scale(1.03);
- }
- .wrapImg{
-    width: 280px;
-    height: 280px;
-    position: relative;
- }
- .img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
- }
- .hoverImg{
-    width: 100%;
-     height: 100%;
-     background-color: rgba(4,4,4,.5);
-     display: flex;
-     justify-content: center;
-     align-items: center;
-    opacity: 0;
-     position: absolute;
-     top: 0;
-     transition: opacity .3s 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
- }
- .hoverImg:hover{
-opacity: 1;
- }
- .svg {
-     fill: var(--btn-google-color);
- }
+}
+.wrapImg {
+  width: 280px;
+  height: 280px;
+  position: relative;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hoverImg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(4, 4, 4, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.3s 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hoverImg:hover {
+  opacity: 1;
+}
+.svg {
+  fill: var(--btn-google-color);
+  opacity: 0.8;
+  transition: opacity 0.3s 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.svg:hover,
+.svg:focus {
+  opacity: 1;
+}
 
 .img {
   width: 100%;
@@ -88,9 +94,11 @@ opacity: 1;
 
 .title {
   font-weight: 700;
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 14px;
+  line-height: 1.14;
   margin-bottom: 10px;
+  color: var(--text-primary-color);
+  letter-spacing: 0.02em;
 }
 
 .role {
@@ -100,7 +108,7 @@ opacity: 1;
 }
 
 /* ===========conflict============== */
- /*.link {
+/*.link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,15 +140,14 @@ opacity: 1;
   box-shadow: var(--shadow);
 }*/
 
- .link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
- .linkedin{
-    margin-right: 18px;
- }
-
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.linkedin {
+  margin-right: 18px;
+}
 
 @media screen and (min-width: 768px) {
   .wrap {
@@ -153,6 +160,11 @@ opacity: 1;
     flex-wrap: wrap;
     flex-direction: row;
     margin-left: -30px;
+  }
+
+  .title {
+    font-size: 16px;
+    line-height: 1.14;
   }
 
   .wrapImg {

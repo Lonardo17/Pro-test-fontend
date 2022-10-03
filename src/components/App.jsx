@@ -29,68 +29,66 @@ export const App = () => {
   return (
     <div className="page">
       <Suspense fallback={<Loader />}>
-        {true && (
-          <Routes>
-            <Route path={home} element={<SharedLayout />}>
-              <Route
-                path={auth}
-                element={
-                  <PublicRoute>
-                    <AuthView />
-                  </PublicRoute>
-                }
-              />
-              <Route
-                index
-                element={
-                  <PrivateRoute>
+        <Routes>
+          <Route path={home} element={<SharedLayout />}>
+            <Route
+              path={auth}
+              element={
+                <PublicRoute restricted>
+                  <AuthView />
+                </PublicRoute>
+              }
+            />
+            <Route
+              index
+              element={
+                <PrivateRoute>
                   <HomeView />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path={techTestPath}
-                element={
-                  <PrivateRoute>
-                    <TestView />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path={theoryTestPath}
-                element={
-                  <PrivateRoute>
-                    <TestView />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path={results}
-                element={
-                  <PrivateRoute>
-                    <ResultViews />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path={materials}
-                element={
-                  <PrivateRoute>
-                    <MaterialsViews />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path={contacts}
-                element={
-                  <PrivateRoute>
-                    <ContactsView />
-                  </PrivateRoute>
-                }
-              />
-            </Route>
-          </Routes>
-        )}
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path={techTestPath}
+              element={
+                <PrivateRoute>
+                  <TestView />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path={theoryTestPath}
+              element={
+                <PrivateRoute>
+                  <TestView />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path={results}
+              element={
+                <PrivateRoute>
+                  <ResultViews />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path={materials}
+              element={
+                <PrivateRoute>
+                  <MaterialsViews />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path={contacts}
+              element={
+                <PublicRoute>
+                  <ContactsView />
+                </PublicRoute>
+              }
+            />
+          </Route>
+        </Routes>
       </Suspense>
       <ToastContainer
         position="top-right"

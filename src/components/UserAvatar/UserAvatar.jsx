@@ -9,7 +9,6 @@ const UserAvatar = () => {
     <div className={s.wrapper}>
       <div className={s.user}>
         <img src={avatar} alt="" className={s.avatar} width="31" height="31" />
-        {/* <span className={s.avatar}>{userName[0].toUpperCase()}</span> */}
       </div>
       <p className={s.name}>{user}</p>
     </div>

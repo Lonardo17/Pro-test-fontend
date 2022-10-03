@@ -7,7 +7,7 @@ const Resources = () => {
       <ul className={s.list}>
         <li>
           <a href="https://dou.ua/" className={s.linkRsourse}>
-            1.dou.ua
+            1. dou.ua
           </a>
         </li>
         <li>
@@ -15,17 +15,17 @@ const Resources = () => {
             href="https://en.wikipedia.org/wiki/Habr"
             className={s.linkRsourse}
           >
-            2.Habr
+            2. Habr
           </a>
         </li>
         <li>
           <a href="https://www.facebook.com/" className={s.linkRsourse}>
-            3.facebook.com/QA
+            3. facebook.com/QA
           </a>
         </li>
         <li>
           <a href="https://goit.ua/" className={s.linkRsourse}>
-            4.goit.ua
+            4. goit.ua
           </a>
         </li>
       </ul>
