@@ -3,7 +3,12 @@ const ApplicationSvg = ({ linkedin, gitHub }) => {
   return (
     <ul className={s.link}>
       <li>
-        <a href={linkedin} className={s.linkedin}>
+        <a
+          href={linkedin}
+          className={s.linkedin}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
           <svg
             className={s.svg}
             xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +32,7 @@ const ApplicationSvg = ({ linkedin, gitHub }) => {
         </a>
       </li>
       <li>
-        <a href={gitHub}>
+        <a href={gitHub} target="_blank" rel="noopener noreferrer nofollow">
           <svg
             className={s.svg}
             width="50"
