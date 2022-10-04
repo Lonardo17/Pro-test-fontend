@@ -24,7 +24,7 @@ const ContactSelector = [
   {
     id: '3',
     image: Iva,
-    name: 'Vladyslav Avidzba',
+    name: 'Ioanna Istomina',
     role: 'DEVELOPER',
     linkedin: 'https://www.linkedin.com/in/vladyslav-avidzba-a5b379243/',
     gitHub: 'https://github.com/vladmw5',
@@ -49,7 +49,7 @@ const ContactSelector = [
   {
     id: '6',
     image: Vlad,
-    name: 'Ioanna Istomina',
+    name: 'Vladyslav Avidzba',
     role: 'DEVELOPER',
     linkedin: 'https://www.linkedin.com/in/ioanna-istomina/',
     gitHub: 'https://github.com/Ioanna-Istomina',
