@@ -59,8 +59,8 @@ const renderCustomizedLabel = ({
 
 export default function Graphic({ percentCorrect, percentIncorrect }) {
   const data = [
-    { name: 'Correct', value: 40 },
-    { name: 'Incorrect', value: 60 },
+    { name: 'Correct', value: percentCorrect },
+    { name: 'Incorrect', value: percentIncorrect },
   ];
   return (
     <PieChart width={768} height={286} className={s.graphic}>
