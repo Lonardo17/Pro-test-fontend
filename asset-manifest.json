@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.3478d542.css",
-    "main.js": "/static/js/main.474247a1.js",
-    "static/css/406.e8f520ed.chunk.css": "/static/css/406.e8f520ed.chunk.css",
+    "main.js": "/static/js/main.e25b16cf.js",
+    "static/css/406.a2da87c0.chunk.css": "/static/css/406.a2da87c0.chunk.css",
     "static/js/406.12cab8e3.chunk.js": "/static/js/406.12cab8e3.chunk.js",
     "static/css/976.ed4610fd.chunk.css": "/static/css/976.ed4610fd.chunk.css",
     "static/js/976.5cacd941.chunk.js": "/static/js/976.5cacd941.chunk.js",
@@ -42,8 +42,8 @@
     "static/media/google-symbol.svg": "/static/media/google-symbol.45390fe8c864f6ba12f2fcaab8463918.svg",
     "index.html": "/index.html",
     "main.3478d542.css.map": "/static/css/main.3478d542.css.map",
-    "main.474247a1.js.map": "/static/js/main.474247a1.js.map",
-    "406.e8f520ed.chunk.css.map": "/static/css/406.e8f520ed.chunk.css.map",
+    "main.e25b16cf.js.map": "/static/js/main.e25b16cf.js.map",
+    "406.a2da87c0.chunk.css.map": "/static/css/406.a2da87c0.chunk.css.map",
     "406.12cab8e3.chunk.js.map": "/static/js/406.12cab8e3.chunk.js.map",
     "976.ed4610fd.chunk.css.map": "/static/css/976.ed4610fd.chunk.css.map",
     "976.5cacd941.chunk.js.map": "/static/js/976.5cacd941.chunk.js.map",
@@ -64,6 +64,6 @@
   },
   "entrypoints": [
     "static/css/main.3478d542.css",
-    "static/js/main.474247a1.js"
+    "static/js/main.e25b16cf.js"
   ]
 }
