@@ -21,7 +21,7 @@ const LogoutButton = () => {
   };
 
   return (
-    <Link className={s.link} onClick={onLogOutUser} to={routes.auth}>
+    <Link className={s.link} onClick={onLogOutUser} to={routes.auth} aria-label="logout">
       <svg className={s.logout}>
         <use href={`${sprite}#icon-sign-out`}></use>
       </svg>

@@ -6,7 +6,7 @@ import routes from 'utils/router';
 
 const ProTestLogo = () => {
   return (
-    <Link to={routes.home}>
+    <Link to={routes.home} aria-label="Pro-Test home link">
       <div className={s.wrapper}>
         <svg className={s.logo}>
           <use href={`${sprite}#icon-logo`}></use>
