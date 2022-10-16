@@ -1,1 +1,1 @@
-export { default } from './ProTestLogo';
+export { default } from './ProTestLogo.jsx';

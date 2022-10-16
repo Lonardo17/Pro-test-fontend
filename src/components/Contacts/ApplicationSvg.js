@@ -8,6 +8,7 @@ const ApplicationSvg = ({ linkedin, gitHub }) => {
           className={s.linkedin}
           target="_blank"
           rel="noopener noreferrer nofollow"
+          aria-label="link to linkedin"
         >
           <svg
             className={s.svg}
@@ -32,7 +33,12 @@ const ApplicationSvg = ({ linkedin, gitHub }) => {
         </a>
       </li>
       <li>
-        <a href={gitHub} target="_blank" rel="noopener noreferrer nofollow">
+        <a
+          href={gitHub}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          aria-label="link to github"
+        >
           <svg
             className={s.svg}
             width="50"
