@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const BASE_URL = 'https://app-protest.herokuapp.com/';
+const BASE_URL = 'https://pro-test-ni4n.onrender.com/';
 
 export const authApi = createApi({
   reducerPath: 'authApi',
